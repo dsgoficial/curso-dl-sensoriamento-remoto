@@ -1,0 +1,2 @@
+# curso_Deep_Learning_Aplicado_ao_Sensoriamento_Remoto
+Material do curso Deep Learning Aplicado ao Sensoriamento Remoto
