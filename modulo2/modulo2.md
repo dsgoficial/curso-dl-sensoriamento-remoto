@@ -39,7 +39,7 @@ A tabela a seguir sumariza as principais características de cada tipo de repres
 Esta tabela serve como um guia de referência rápido e claro, consolidando informações cruciais sobre a estrutura dos dados de imagem que serão manipulados ao longo do curso, facilitando a identificação das diferenças e implicações de cada representação.
 
 **Exemplo de Código 1.1.1: Criação e Manipulação Básica de Imagens com NumPy**
-O código a seguir demonstra como criar imagens em tons de cinza, RGB e simular uma imagem multiespectral usando NumPy. Também mostra a conversão de tipos de dados e a normalização. [C_1]
+O código a seguir demonstra como criar imagens em tons de cinza, RGB e simular uma imagem multiespectral usando NumPy. Também mostra a conversão de tipos de dados e a normalização.
 
 ```python
 import numpy as np
@@ -117,7 +117,7 @@ Por exemplo, para recortar uma imagem ou selecionar uma área específica, podem
 
 A operação de **remodelagem (reshape)** permite alterar a forma (dimensões) de um array NumPy sem modificar seus dados subjacentes.[12, 13] A função `np.reshape(array, nova_forma)` é utilizada, e uma dimensão pode ser especificada como `-1`, permitindo que o NumPy infira automaticamente o tamanho dessa dimensão com base no comprimento total do array e nas outras dimensões.[12, 13] O parâmetro `order` controla a ordem de leitura e escrita dos elementos (`'C'` para ordem C-like, `'F'` para Fortran-like, `'A'` para automático), o que pode impactar a eficiência da memória e o desempenho computacional devido à localidade dos dados.[12, 13] Em aplicações de imagem, o `reshape` é frequentemente usado para achatar uma imagem 2D ou 3D em um vetor 1D (por exemplo, para entrada em Perceptrons Multicamadas - MLPs) ou para reorganizar as dimensões dos canais para formatos esperados por certas bibliotecas ou modelos de Deep Learning.[14, 15]
 
-A **normalização** é o processo de escalonamento dos valores de pixels de uma imagem para um intervalo específico, tipicamente entre  ou [-1, 1].[5, 6] Sua importância é multifacetada:
+A **normalização** é o processo de escalonamento dos valores de pixels de uma imagem para um intervalo específico, tipicamente entre  ou [-1, 1]. Sua importância é multifacetada:
 
   * **Reduz o impacto de variações de iluminação e condições de aquisição de imagem:** Garante que o modelo não seja indevidamente influenciado por diferenças de brilho ou contraste entre as imagens.
   * **Melhora a velocidade de convergência e a estabilidade de algoritmos de Machine Learning:** Valores de entrada em uma faixa consistente evitam que gradientes se tornem muito grandes ou muito pequenos, o que pode levar a problemas de gradiente explosivo ou evanescente.
@@ -132,7 +132,7 @@ As técnicas mais comuns incluem:
 As operações de manipulação de arrays NumPy, como fatiamento, remodelagem e normalização, não são apenas ferramentas para carregar e manipular imagens, mas são a base para construir pipelines de dados eficientes e robustos. Modelos de Deep Learning, especialmente aqueles que lidam com imagens de Sensoriamento Remoto, processam grandes volumes de dados. Um pré-processamento ineficiente ou incorreto pode levar a problemas de memória, lentidão no treinamento e até mesmo à divergência do modelo. A compreensão desses detalhes técnicos é crucial para a otimização e a estabilidade dos pipelines de Deep Learning, que são pré-requisitos para o treinamento bem-sucedido de modelos, especialmente com os grandes e complexos datasets de Sensoriamento Remoto.
 
 **Exemplo de Código 1.1.2: Operações Fundamentais com NumPy**
-O código a seguir demonstra o uso de fatiamento, remodelagem e normalização em arrays NumPy, simulando operações em imagens. [C\_2]
+O código a seguir demonstra o uso de fatiamento, remodelagem e normalização em arrays NumPy, simulando operações em imagens.
 
 ```python
 import numpy as np
@@ -231,7 +231,7 @@ Esta seção introduz os conceitos de filtros espaciais e a operação de convol
 
 A **convolução 2D** é uma operação que atua sobre duas "sinais" bidimensionais: uma imagem de entrada e um "kernel" (ou filtro), produzindo uma terceira imagem de saída.[16, 17, 18] O funcionamento intuitivo da convolução envolve a ideia de uma "janela deslizante" (sliding window): o kernel, que é uma pequena matriz de pesos, desliza sobre a imagem de entrada. Em cada posição, os valores correspondentes da porção da imagem sob a janela e do kernel são multiplicados elemento a elemento e, em seguida, somados. O resultado dessa soma ponderada se torna o novo valor do pixel na imagem de saída. Essa operação é fundamental para extrair características locais da imagem, como bordas e texturas.
 
-O **stride (passo)** define a distância que a janela deslizante (o kernel) se move a cada passo, tanto na direção horizontal quanto na vertical. Um `stride` maior que 1 faz com que a janela pule pixels, resultando em uma imagem de saída com dimensões reduzidas. Essa característica é utilizada em CNNs para reduzir a dimensionalidade espacial dos mapas de características (feature maps), de forma análoga ao pooling.[19] No entanto, em camadas convolucionais típicas, um `stride=(1, 1)` é mais comum para preservar a maior quantidade possível de informações espaciais.[19]
+O **stride (passo)** define a distância que a janela deslizante (o kernel) se move a cada passo, tanto na direção horizontal quanto na vertical. Um `stride` maior que 1 faz com que a janela pule pixels, resultando em uma imagem de saída com dimensões reduzidas. Essa característica é utilizada em CNNs para reduzir a dimensionalidade espacial dos mapas de características (feature maps), de forma análoga ao pooling. No entanto, em camadas convolucionais típicas, um `stride=(1, 1)` é mais comum para preservar a maior quantidade possível de informações espaciais.
 
 O **padding (preenchimento)** aborda como as bordas da imagem são tratadas durante a operação de convolução. Para pixels localizados nas bordas, o kernel pode não se encaixar completamente dentro dos limites da imagem. Existem dois tipos comuns de padding:
 
@@ -243,7 +243,7 @@ A escolha entre `'valid'` e `'same'` padding envolve trade-offs: enquanto `'same
 A convolução 2D, com seus conceitos de sliding window, stride e padding, é a operação fundamental que define as camadas convolucionais em Redes Neurais Convolucionais (CNNs). A compreensão desses conceitos estabelece uma relação direta entre o processamento de imagens clássico e o Deep Learning. As decisões sobre `padding` e `stride` não são apenas detalhes de implementação, mas escolhas arquitetônicas cruciais que afetam o tamanho dos mapas de características e, consequentemente, a profundidade e a capacidade de aprendizado de uma CNN. Assim, esta seção serve como a base conceitual direta para as CNNs, permitindo que os alunos compreendam que os "filtros" em CNNs são análogos aos kernels clássicos, e que os parâmetros de convolução são ferramentas de design de arquitetura de rede.
 
 **Exemplo de Código 1.2.1: Convolução 2D Simples (do zero)**
-Este exemplo demonstra a implementação de uma convolução 2D básica, sem otimizações, para ilustrar o conceito de janela deslizante. [C\_3]
+Este exemplo demonstra a implementação de uma convolução 2D básica, sem otimizações, para ilustrar o conceito de janela deslizante.
 
 ```python
 import numpy as np
@@ -376,19 +376,21 @@ print(f"Manual e SciPy (same) são iguais: {np.allclose(output_same, scipy_outpu
 
 Os filtros espaciais são ferramentas essenciais no processamento de imagens para tarefas como suavização, realce e detecção de bordas. Cada filtro possui um propósito e um mecanismo de funcionamento distintos. A implementação "do zero" desses filtros nos ajuda a entender profundamente como as operações de convolução atuam sobre os pixels da imagem.
 
-O **filtro da média (mean filter)** é um método simples e intuitivo para suavizar imagens e reduzir ruído.[24, 25, 20, 26] Ele opera substituindo o valor de cada pixel pela média dos valores de seus vizinhos, incluindo ele mesmo, dentro de uma janela (kernel) definida, como um kernel 3x3.[24, 20] Essa operação tem o efeito de eliminar valores de pixels que são atípicos em relação ao seu entorno, atuando como um filtro passa-baixa que reduz variações de intensidade e detalhes de alta frequência.[24, 20] Embora eficaz na redução de ruído, o filtro da média pode borrar as bordas da imagem.[24, 20]
+O **filtro da média (mean filter)** é um método simples e intuitivo para suavizar imagens e reduzir ruído.[24, 25, 20, 26] Ele opera substituindo o valor de cada pixel pela média dos valores de seus vizinhos, incluindo ele mesmo, dentro de uma janela (kernel) definida, como um kernel 3x3. Essa operação tem o efeito de eliminar valores de pixels que são atípicos em relação ao seu entorno, atuando como um filtro passa-baixa que reduz variações de intensidade e detalhes de alta frequência. Embora eficaz na redução de ruído, o filtro da média pode borrar as bordas da imagem.
 
   * **Efeito na Imagem:** O resultado é uma imagem mais "suave" ou "borrada", onde o ruído pontual é reduzido. Bordas nítidas tendem a ser suavizadas.
   * **Aplicação em Sensoriamento Remoto:** Utilizado para reduzir ruído em imagens de satélite (e.g., ruído de "sal e pimenta" ou ruído Gaussiano), suavizar pequenas variações em mapas de uso do solo, ou como um pré-processamento para outras análises onde detalhes finos não são desejados.
 
-O **filtro Gaussiano (Gaussian filter)** é uma técnica de suavização de imagens e redução de ruído mais sofisticada que o filtro da média, pois preserva melhor as bordas.[25, 27, 22, 28, 29, 30] Ele funciona de maneira semelhante ao filtro da média, mas os vizinhos são ponderados por uma função Gaussiana (distribuição normal), o que significa que pixels mais próximos ao centro do kernel contribuem mais para o valor médio.[25, 27, 22, 28, 29, 30] As características do filtro Gaussiano são definidas pelo tamanho do kernel e pelo valor de sigma ($\\sigma$), que controla a largura da distribuição Gaussiana: um sigma maior resulta em um maior embaçamento da imagem.[27, 22, 28, 29, 30] A função Gaussiana 2D é dada por:
-$G(x, y) = \\frac{1}{2\\pi\\sigma^2} e^{-\\frac{x^2 + y^2}{2\\sigma^2}}$
+O **filtro Gaussiano (Gaussian filter)** é uma técnica de suavização de imagens e redução de ruído mais sofisticada que o filtro da média, pois preserva melhor as bordas. Ele funciona de maneira semelhante ao filtro da média, mas os vizinhos são ponderados por uma função Gaussiana (distribuição normal), o que significa que pixels mais próximos ao centro do kernel contribuem mais para o valor médio. As características do filtro Gaussiano são definidas pelo tamanho do kernel e pelo valor de sigma ($\sigma$), que controla a largura da distribuição Gaussiana: um sigma maior resulta em um maior embaçamento da imagem. A função Gaussiana 2D é dada por:
+
+$G(x,y)=\frac{1}{2\pi\sigma^2} e^{-\frac{x^2 + y^2}{2\sigma^2}}$
+
 Onde $x$ e $y$ são as distâncias do centro do kernel.
 
   * **Efeito na Imagem:** Produz um desfoque mais natural e uniforme do que o filtro da média, preservando melhor as estruturas de borda. É muito eficaz para reduzir ruído Gaussiano.
   * **Aplicação em Sensoriamento Remoto:** Frequentemente usado como um passo de pré-processamento para suavizar imagens antes de aplicar detectores de borda (como no Laplaciano de Gaussiano - LoG), para reduzir o efeito de neblina atmosférica, ou para criar mapas de densidade suavizados.
 
-O **operador Sobel (Sobel operator)** é amplamente utilizado para detecção de bordas, enfatizando regiões de alta frequência espacial que correspondem a transições de intensidade.[31, 32, 16, 24] Tecnicamente, ele é um operador de diferenciação discreta que calcula uma aproximação do gradiente da função de intensidade da imagem.[16, 31, 32, 24] O Sobel utiliza dois kernels 3x3 (um para detectar mudanças horizontais, Gx, e outro para mudanças verticais, Gy) que são convoluídos com a imagem original.
+O **operador Sobel (Sobel operator)** é amplamente utilizado para detecção de bordas, enfatizando regiões de alta frequência espacial que correspondem a transições de intensidade. Tecnicamente, ele é um operador de diferenciação discreta que calcula uma aproximação do gradiente da função de intensidade da imagem. O Sobel utiliza dois kernels 3x3 (um para detectar mudanças horizontais, Gx, e outro para mudanças verticais, Gy) que são convoluídos com a imagem original.
 
   * **Kernel Horizontal (Gx):**
     ```
@@ -403,12 +405,12 @@ O **operador Sobel (Sobel operator)** é amplamente utilizado para detecção de
     [ 1  2  1]
     ```
 
-A magnitude do gradiente em cada ponto é então combinada (por exemplo, usando a adição Pitagórica: $G = \\sqrt{G\_x^2 + G\_y^2}$) para determinar a intensidade da borda.[16, 31, 32, 24] O operador Sobel é menos sensível a ruído do que outros operadores de borda mais simples, mas ainda pode amplificar altas frequências.[32]
+A magnitude do gradiente em cada ponto é então combinada (por exemplo, usando a adição Pitagórica: $G = \sqrt{G_x^2 + G_y^2}$) para determinar a intensidade da borda. O operador Sobel é menos sensível a ruído do que outros operadores de borda mais simples, mas ainda pode amplificar altas frequências.
 
   * **Efeito na Imagem:** O resultado é uma imagem onde as bordas são realçadas, aparecendo como linhas brancas (ou de alta intensidade) contra um fundo escuro. Ele detecta a força e a orientação das bordas.
   * **Aplicação em Sensoriamento Remoto:** Essencial para identificar feições lineares como estradas, rios, limites de campos agrícolas, ou estruturas urbanas em imagens de satélite. Pode ser usado para delinear áreas de mudança ou transição.
 
-O **filtro Laplaciano (Laplacian filter)** é um detector de bordas que destaca regiões de rápida mudança de intensidade, calculando a segunda derivada espacial de uma imagem.[27, 20, 33, 29, 30] Devido à sua alta sensibilidade a ruído, o Laplaciano é frequentemente aplicado a uma imagem que foi previamente suavizada com um filtro Gaussiano; essa combinação é conhecida como filtro LoG (Laplacian of Gaussian).[33, 29, 30, 27, 20, 34] O LoG é particularmente eficaz na detecção de "zero-crossings" (pontos onde a taxa de mudança de intensidade inverte a direção), que correspondem às bordas dos objetos.[33, 29, 30, 27, 20, 34] Um kernel Laplaciano comum é:
+O **filtro Laplaciano (Laplacian filter)** é um detector de bordas que destaca regiões de rápida mudança de intensidade, calculando a segunda derivada espacial de uma imagem.[27, 20, 33, 29, 30] Devido à sua alta sensibilidade a ruído, o Laplaciano é frequentemente aplicado a uma imagem que foi previamente suavizada com um filtro Gaussiano; essa combinação é conhecida como filtro LoG (Laplacian of Gaussian). O LoG é particularmente eficaz na detecção de "zero-crossings" (pontos onde a taxa de mudança de intensidade inverte a direção), que correspondem às bordas dos objetos. Um kernel Laplaciano comum é:
 
 ```
 [ 0  1  0]
@@ -443,7 +445,7 @@ A tabela a seguir resume as características e aplicações dos filtros espaciai
 Esta tabela oferece um panorama conciso e comparativo dos filtros espaciais, facilitando a memorização e a aplicação prática desses conceitos.
 
 **Exemplo de Código 1.2.2: Aplicação de Filtros Clássicos (Implementação do Zero)**
-O código a seguir demonstra a aplicação de filtros de média, Gaussiano, Sobel e Laplaciano em uma imagem usando a função `convolve2D_from_scratch` implementada anteriormente. [C\_4]
+O código a seguir demonstra a aplicação de filtros de média, Gaussiano, Sobel e Laplaciano em uma imagem usando a função `convolve2D_from_scratch` implementada anteriormente.
 
 ```python
 import numpy as np
@@ -553,8 +555,6 @@ display_images([image_original, image_mean_filtered, image_gaussian_filtered, so
 ```
 
 #### 1.3. Segmentação Clássica de Imagens
-
-Esta seção aborda as abordagens tradicionais para a segmentação de imagens, um passo crucial para isolar objetos ou regiões de interesse.
 
 **1.3.1. Segmentação Baseada em Pixels vs. Baseada em Regiões**
 
@@ -707,11 +707,11 @@ O **Perceptron** é reconhecido como o tipo mais simples de rede neural e um alg
 
 O **modelo matemático** de um Perceptron é essencialmente uma função de limiar (threshold function) que mapeia um vetor de entrada de valores reais para uma saída binária (tipicamente 0 ou 1). Os componentes chave incluem:
 
-  * **Entradas ($x$):** Um vetor de características de entrada, onde cada $x\_i$ representa um dado de entrada.
-  * **Pesos ($w$):** Um vetor de pesos reais, onde cada $w\_i$ é multiplicado pela entrada correspondente $x\_i$. Os pesos determinam a influência de cada entrada na saída.
-  * **Bias ($b$):** Um termo de bias ($w\_0$ ou $b$) é adicionado à soma ponderada. Ele atua como um ajuste na fronteira de decisão, permitindo que o neurônio ative mesmo quando todas as entradas são zero, ou que não ative mesmo com entradas positivas.
-  * **Soma Ponderada (Net Sum):** O neurônio calcula a soma ponderada de suas entradas, somando os produtos das entradas pelos seus respectivos pesos e adicionando o bias: $z = b + \\sum\_{i=1}^{n} w\_i x\_i$. Em notação vetorial, isso é $z = \\mathbf{w} \\cdot \\mathbf{x} + b$, onde $\\mathbf{w}$ é o vetor de pesos e $\\mathbf{x}$ é o vetor de entradas.
-  * **Função de Ativação (Step Function):** A soma ponderada $z$ é então passada por uma função de ativação, geralmente uma função degrau de Heaviside, para produzir a saída binária. A saída é 1 se $z$ for maior que um limiar (ou se $\\mathbf{w} \\cdot \\mathbf{x} + b \> 0$), e 0 caso contrário.
+  * **Entradas ($x$):** Um vetor de características de entrada, onde cada $x_i$ representa um dado de entrada.
+  * **Pesos ($w$):** Um vetor de pesos reais, onde cada $w_i$ é multiplicado pela entrada correspondente $x_i$. Os pesos determinam a influência de cada entrada na saída.
+  * **Bias ($b$):** Um termo de bias ($w_0$ ou $b$) é adicionado à soma ponderada. Ele atua como um ajuste na fronteira de decisão, permitindo que o neurônio ative mesmo quando todas as entradas são zero, ou que não ative mesmo com entradas positivas.
+  * **Soma Ponderada (Net Sum):** O neurônio calcula a soma ponderada de suas entradas, somando os produtos das entradas pelos seus respectivos pesos e adicionando o bias: $z = b + \sum_{i=1}^{n} w_i x_i$. Em notação vetorial, isso é $z = \mathbf{w} \cdot \mathbf{x} + b$, onde $\mathbf{w}$ é o vetor de pesos e $\mathbf{x}$ é o vetor de entradas.
+  * **Função de Ativação (Step Function):** A soma ponderada $z$ é então passada por uma função de ativação, geralmente uma função degrau de Heaviside, para produzir a saída binária. A saída é 1 se $z$ for maior que um limiar (ou se $\mathbf{w} \cdot \mathbf{x} + b > 0$), e 0 caso contrário.
 
 A **fronteira de decisão** de um Perceptron de camada única é linear. Isso significa que ele tenta separar as classes de dados por uma única linha (em 2D) ou um hiperplano (em dimensões superiores). O algoritmo de treinamento do Perceptron ajusta os pesos e o bias para encontrar essa linha ótima que separa as duas classes.
 
