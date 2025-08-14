@@ -116,29 +116,25 @@ Para garantir que todos os alunos tenham o ambiente de desenvolvimento configura
 1. **Script Automatizado de Instalação**: É uma boa prática criar um script que instale todas as dependências de uma vez. Você pode usar o pip para isso. Um exemplo de script que pode ser executado em uma célula do Colab:
 
 ```python
-# Instalação das bibliotecas essenciais para o curso
-!pip install numpy pandas matplotlib scikit-learn tensorflow opencv-python rasterio geopandas
-!pip install --upgrade tensorflow # Garante a versão mais recente do TensorFlow
-!pip install --upgrade scikit-image # Garante a versão mais recente do scikit-image
+# Exemplo de instação de biblioteca para o curso
+!pip install rasterio
 ```
 
-Este script instala bibliotecas comuns para manipulação de dados (`numpy`, `pandas`), visualização (`matplotlib`), machine learning (`scikit-learn`), deep learning (`tensorflow`), processamento de imagens (`opencv-python`, `scikit-image`), e dados geoespaciais (`rasterio`, `geopandas`).
+Este script instala bibliotecas comuns para manipulação de dados (`numpy`, `pandas`), visualização (`matplotlib`), machine learning (`scikit-learn`), deep learning (`torch`), processamento de imagens (`opencv-python`, `scikit-image`), e dados geoespaciais (`rasterio`, `geopandas`).
 
 2. **Importância de Verificar Versões**: A reprodutibilidade é crucial em projetos de Deep Learning. Diferentes versões de bibliotecas podem levar a comportamentos inesperados ou erros. É importante verificar as versões das bibliotecas instaladas:
 
 ```python
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import tensorflow as tf
+import torch
 import cv2
 import rasterio
 import geopandas as gpd
 
 print(f"NumPy version: {np.__version__}")
 print(f"Pandas version: {pd.__version__}")
-print(f"Matplotlib version: {plt.__version__}")
-print(f"TensorFlow version: {tf.__version__}")
+print(f"PyTorch version: {torch.__version__}")
 print(f"OpenCV version: {cv2.__version__}")
 print(f"Rasterio version: {rasterio.__version__}")
 print(f"Geopandas version: {gpd.__version__}")
@@ -154,9 +150,7 @@ import numpy as np
 import pandas as pd
 
 # 2. Deep Learning Frameworks
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
+import torch
 
 # 3. Processamento de Imagens e Visão Computacional
 import cv2
@@ -386,7 +380,7 @@ print(f"Escalonamento (A_ops * 2):\n{escalonamento}")
 #  [6 8]]
 ```
 
-#### Broadcasting e vetorização eficiente (20min)
+#### Broadcasting e vetorização
 
 A eficiência computacional é um fator crítico no Deep Learning, e o NumPy oferece mecanismos poderosos para otimizá-la:
 
@@ -473,35 +467,640 @@ print(f"Imagem Escalonada (Broadcasting):\n{scaled_image}")
 #   [ 64.  102.4 153.6]]]
 ```
 
-A ênfase na vetorização e no broadcasting não é apenas uma questão de "código mais limpo", mas um princípio de design fundamental para a eficiência computacional em Deep Learning. Modelos de Deep Learning envolvem milhões ou bilhões de parâmetros e operam em conjuntos de dados massivos. Sem essas operações otimizadas, os tempos de treinamento seriam proibitivos.
+### numpy.reshape
 
-#### Prática no Colab: Implementação de operações básicas (15min)
+A função numpy.reshape é uma ferramenta poderosa para alterar a estrutura dimensional de um array NumPy sem, no entanto, modificar os dados subjacentes. Sua principal finalidade é reorganizar a interpretação dos elementos do array em uma nova forma, mantendo o número total de elementos constante.¹ Esta funcionalidade é frequentemente utilizada para transformar arrays de uma dimensão para outra, como converter um vetor unidimensional em uma matriz bidimensional, ou vice-versa, ou ainda ajustar as dimensões de uma matriz para uma nova configuração.
 
-Nesta seção, os alunos realizarão exercícios práticos no Google Colab para consolidar os conceitos de representação de dados e operações básicas com NumPy.
 
-**Exercícios Sugeridos:**
+A função numpy.reshape aceita os seguintes parâmetros principais:
 
-1. **Criação de Matrizes e Tensores:**
-   - Crie um vetor 1D com 5 elementos.
-   - Crie uma matriz 2D (3x3) preenchida com zeros.
-   - Crie um tensor 3D que simule uma imagem colorida (por exemplo, 64x64 pixels com 3 canais).
-   - Crie um tensor 4D que simule um lote de 16 imagens em escala de cinza (por exemplo, 32x32 pixels).
+- **a**: O array de entrada que se deseja remodelar. Este pode ser qualquer objeto que possa ser interpretado como um array.¹
 
-2. **Operações Matriciais:**
-   - Crie duas matrizes 2x2 e realize a multiplicação de matrizes entre elas.
-   - Crie duas matrizes 3x3 e realize o produto elemento a elemento (Hadamard).
-   - Crie uma matriz 2x4 e obtenha sua transposta.
-   - Realize operações de soma, subtração e escalonamento com matrizes e escalares.
+- **shape**: Um inteiro ou uma tupla de inteiros que especifica a nova forma desejada para o array. É imperativo que o produto das dimensões na nova forma seja compatível com o número total de elementos no array original. Se o shape for um único inteiro, o resultado será um array 1-D com esse comprimento.¹
 
-3. **Broadcasting em Cenários Reais:**
-   - Crie uma matriz de ativações (por exemplo, 5x10) e adicione um vetor de viés (1x10) usando broadcasting.
-   - Simule um conjunto de dados (por exemplo, 100 amostras, 5 características) e normalize cada característica subtraindo sua média e dividindo pelo desvio padrão, utilizando broadcasting.
-   - Crie um tensor que represente uma imagem (por exemplo, 100x100x3) e aplique um fator de brilho diferente para cada canal de cor usando broadcasting.
+  Uma característica notável do parâmetro shape é a possibilidade de utilizar -1 para uma das dimensões. Quando -1 é fornecido, o NumPy infere automaticamente o tamanho dessa dimensão com base no comprimento total do array e nas outras dimensões especificadas.¹ Por exemplo, se um array tem 6 elementos e se deseja remodelá-lo para (3, -1), o NumPy inferirá que a segunda dimensão deve ser 2, resultando em uma forma (3, 2). Essa capacidade de inferência de dimensão simplifica significativamente o código, tornando-o mais robusto e menos propenso a erros de cálculo manual de dimensões, o que é particularmente valioso em pipelines de dados complexos ou ao lidar com dados de tamanho variável.
 
-4. **Medição de Performance (Opcional, para demonstração):**
-   - Compare o tempo de execução de uma operação (por exemplo, soma de dois arrays grandes) usando um loop for explícito em Python versus a operação vetorizada do NumPy. Isso demonstrará a importância da vetorização para eficiência.
+- **order**: Este é um parâmetro opcional que define a ordem na qual os elementos do array de entrada são lidos e, subsequentemente, colocados no array remodelado. As opções incluem 'C', 'F' e 'A'.¹
+  - **'C'** (padrão): Indica uma ordem de índice C-like (linha principal), onde o índice do último eixo muda mais rapidamente, e o do primeiro eixo muda mais lentamente.
+  - **'F'**: Indica uma ordem de índice Fortran-like (coluna principal), onde o índice do primeiro eixo muda mais rapidamente, e o do último eixo muda mais lentamente.
+  - **'A'**: Significa que os elementos serão lidos/escritos em ordem Fortran-like se o array for contíguo em Fortran na memória, e C-like caso contrário.
 
-Esses exercícios práticos ajudarão a solidificar a compreensão dos conceitos e a familiaridade com a sintaxe do NumPy, preparando os alunos para implementações mais complexas em redes neurais.
+É crucial notar que as opções 'C' e 'F' referem-se estritamente à ordem de indexação ou iteração lógica dos elementos, e não necessariamente ao layout físico dos dados na memória subjacente do array.¹
+
+### Valor de Retorno
+
+A função numpy.reshape retorna um novo objeto ndarray com a forma especificada. Este objeto será uma view (visão) do array original sempre que for possível. Se a nova forma não puder ser obtida através de uma view (por exemplo, devido a uma mudança na ordem de leitura/escrita que exige uma reorganização física dos dados), uma cópia do array será feita. É importante ressaltar que não há garantia quanto ao layout de memória (C-contíguo ou Fortran-contíguo) do array retornado.¹
+
+### Exemplos Práticos
+
+A seguir, são apresentados exemplos que ilustram o uso de numpy.reshape em diferentes cenários:
+
+#### Exemplo 1: Array 1D para 2D
+
+```python
+import numpy as np
+
+arr_1d = np.arange(6)
+print("Array 1D original:\n", arr_1d)
+
+# Remodelando para 2x3
+arr_2d = np.reshape(arr_1d, (2, 3))
+print("\nArray 2D (2x3):\n", arr_2d)
+```
+
+**Saída:**
+```
+Array 1D original:
+[0 1 2 3 4 5]
+
+Array 2D (2x3):
+[[0 1 2]
+ [3 4 5]]
+```
+
+#### Exemplo 2: Array 2D para 1D
+
+```python
+arr_2d_orig = np.array([[0, 1, 2], [3, 4, 5]])
+print("Array 2D original:\n", arr_2d_orig)
+
+# Remodelando para 1D usando -1
+arr_flat = np.reshape(arr_2d_orig, -1)  # ou (6,)
+print("\nArray 1D (achatado):\n", arr_flat)
+```
+
+**Saída:**
+```
+Array 2D original:
+[[0 1 2]
+ [3 4 5]]
+
+Array 1D (achatado):
+[0 1 2 3 4 5]
+```
+
+#### Exemplo 3: Uso de order='F'
+
+```python
+a = np.array([[1, 2, 3], [4, 5, 6]])
+print("Array original:\n", a)
+
+# Remodelando com ordem 'C' (padrão)
+reshaped_c = np.reshape(a, (3, 2), order='C')
+print("\nRemodelado (3x2, order='C'):\n", reshaped_c)
+
+# Remodelando com ordem 'F'
+reshaped_f = np.reshape(a, (3, 2), order='F')
+print("\nRemodelado (3x2, order='F'):\n", reshaped_f)
+```
+
+**Saída:**
+```
+Array original:
+[[1 2 3]
+ [4 5 6]]
+
+Remodelado (3x2, order='C'):
+[[1 2]
+ [3 4]
+ [5 6]]
+
+Remodelado (3x2, order='F'):
+[[1 4]
+ [2 5]
+ [3 6]]
+```
+
+Neste exemplo, a diferença entre as ordens 'C' e 'F' é evidente. A ordem 'C' (padrão) lê os elementos linha por linha (1, 2, 3, 4, 5, 6) e os preenche na nova forma seguindo a mesma lógica. Em contraste, a ordem 'F' lê os elementos coluna por coluna (1, 4, 2, 5, 3, 6) e os insere na nova forma de acordo com essa sequência. A compreensão de como o parâmetro order influencia a reorganização lógica dos dados é crucial para prever o resultado da operação.¹
+
+### Casos de Uso do reshape
+
+numpy.reshape é amplamente utilizado em diversas aplicações:
+
+- **Preparação de Dados**: É comum transformar dados para que se adequem aos requisitos de entrada de algoritmos de Machine Learning, como converter imagens 2D em vetores 1D achatados ou adicionar uma dimensão de canal para modelos de redes neurais.
+
+- **Processamento de Imagem**: Reorganizar pixels de uma imagem para diferentes representações ou para aplicar filtros e transformações.
+
+- **Análise de Séries Temporais**: Ajustar a forma de sequências de dados para que se encaixem em modelos específicos que esperam uma determinada estrutura de entrada.
+
+### Considerações Importantes
+
+#### View vs. Copy
+
+A função numpy.reshape é otimizada para eficiência, e, por isso, tenta retornar uma view do array original sempre que possível. Isso implica que, se o array remodelado for uma view, quaisquer modificações realizadas nele afetarão diretamente o array original, uma vez que ambos compartilham os mesmos dados subjacentes. Uma cópia do array é criada apenas quando a nova forma não pode ser obtida através de uma view, o que geralmente ocorre quando uma mudança na ordem de leitura/escrita (order='F' para um array C-contíguo, por exemplo) exige uma reorganização física dos dados na memória. A ausência de garantia sobre o layout de memória do array retornado significa que o desenvolvedor deve estar ciente dessa dualidade entre view e copy para evitar efeitos colaterais inesperados. Para garantir uma independência total entre o array original e o remodelado, é aconselhável chamar explicitamente o método .copy() após a operação de reshape, embora isso acarrete um custo adicional de desempenho e memória.¹
+
+#### Compatibilidade de Forma
+
+O número total de elementos no array deve ser idêntico antes e depois da operação de reshape. Se as formas especificadas forem incompatíveis com o número total de elementos, um ValueError será levantado.
+
+#### O parâmetro -1
+
+A flexibilidade oferecida pelo uso de -1 no parâmetro shape permite que uma das dimensões seja calculada automaticamente pelo NumPy. Essa funcionalidade é uma conveniência poderosa, garantindo que o número total de elementos seja mantido e simplificando a codificação, especialmente em cenários onde o tamanho exato de uma dimensão pode não ser conhecido de antemão ou pode variar dinamicamente.
+
+## numpy.stack: Empilhando Arrays ao Longo de um Novo Eixo
+
+A função numpy.stack() é empregada para unir uma sequência de arrays (ou objetos array-like) ao longo de um novo eixo. Sua funcionalidade distingue-se fundamentalmente da numpy.concatenate(), que une arrays ao longo de um eixo existente. Enquanto concatenate() mantém a dimensionalidade do array resultante, stack() aumenta a dimensionalidade dos arrays de entrada em um. Por exemplo, stack() pode transformar arrays 1D em um array 2D, ou arrays 2D em um array 3D.²
+
+Esta distinção é vital para estruturar dados corretamente, especialmente em áreas como Machine Learning, onde a forma dos tensores é crítica. Um erro na escolha entre stack e concatenate pode levar a incompatibilidades de forma e falhas em algoritmos.
+
+### Parâmetros de numpy.stack
+
+A sintaxe básica para numpy.stack() é `numpy.stack((a1, a2,...), axis=0)`.² Os parâmetros são:
+
+- **tup**: Uma sequência (como uma tupla ou lista) de arrays a serem empilhados. Um requisito crucial é que todos os arrays nesta sequência devem ter a mesma forma exata.² Se as formas diferirem, a função levantará um erro.
+
+- **axis**: Um inteiro que especifica o índice do novo eixo no array resultante ao longo do qual os arrays de entrada serão empilhados. O valor padrão para axis é 0.²
+
+### Valor de Retorno
+
+A função retorna um único ndarray que é o resultado do empilhamento dos arrays fornecidos.²
+
+### Exemplos Práticos
+
+Os exemplos a seguir demonstram o comportamento de numpy.stack():
+
+#### Exemplo 1: Empilhando Arrays 1D (axis=0 - padrão)
+
+```python
+import numpy as np
+
+a = np.array([1, 2])
+b = np.array([3, 4])
+c = np.stack((a, b))  # axis=0 por padrão
+print("Arrays 1D empilhados (axis=0):\n", c)
+print("Forma do array resultante:", c.shape)
+```
+
+**Saída:**
+```
+Arrays 1D empilhados (axis=0):
+[[1 2]
+ [3 4]]
+Forma do array resultante: (2, 2)
+```
+
+#### Exemplo 2: Empilhando Arrays 1D (axis=1)
+
+```python
+a = np.array([1, 2])
+b = np.array([3, 4])
+c = np.stack((a, b), axis=1)
+print("\nArrays 1D empilhados (axis=1):\n", c)
+print("Forma do array resultante:", c.shape)
+```
+
+**Saída:**
+```
+Arrays 1D empilhados (axis=1):
+[[1 3]
+ [2 4]]
+Forma do array resultante: (2, 2)
+```
+
+#### Exemplo 3: Empilhando Arrays 2D (axis=0)
+
+```python
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+c = np.stack((a, b))
+print("\nArrays 2D empilhados (axis=0):\n", c)
+print("Forma do array resultante:", c.shape)
+```
+
+**Saída:**
+```
+Arrays 2D empilhados (axis=0):
+[[[1 2]
+  [3 4]]
+
+ [[5 6]
+  [7 8]]]
+Forma do array resultante: (2, 2, 2)
+```
+
+### Casos de Uso
+
+A função stack() é particularmente útil em cenários onde é necessário combinar arrays adicionando uma nova dimensão, em vez de simplesmente concatená-los ao longo de uma dimensão existente²:
+
+- **Criação de Lotes de Dados para Machine Learning**: É frequentemente utilizada para empilhar amostras individuais (por exemplo, imagens 2D ou sequências de tempo 1D) para formar um lote 3D ou 2D, onde o novo eixo representa a dimensão do lote para processamento em redes neurais.
+
+- **Combinação de Features**: Permite agrupar diferentes tipos de features (como canais de cor RGB de imagens ou leituras de múltiplos sensores) para uma única observação multidimensional.
+
+- **Organização de Resultados Experimentais**: Facilita a comparação e análise de resultados ao empilhar arrays de resultados provenientes de múltiplos experimentos.
+
+### Considerações Importantes
+
+#### Requisito de Mesma Forma
+
+O ponto mais crítico ao usar numpy.stack() é que todos os arrays de entrada (a1, a2,...) devem ter a mesma forma exata. Qualquer diferença nas suas dimensões resultará em um erro.²
+
+#### Criação de Novo Eixo
+
+Ao contrário de numpy.concatenate(), que une arrays ao longo de um eixo já existente, numpy.stack() sempre cria um novo eixo no array resultante. Isso significa que a dimensionalidade do array de saída será sempre uma unidade maior do que a dimensionalidade dos arrays de entrada.² Por exemplo, empilhar dois arrays 1D de forma (N,) resultará em um array 2D de forma (2, N), enquanto concatená-los resultaria em um array 1D de forma (2N,). Esta distinção é fundamental para estruturar dados corretamente em aplicações que dependem de formas de tensor específicas.
+
+#### Relação com vstack e hstack
+
+numpy.vstack() e numpy.hstack() são funções especializadas que oferecem sintaxe mais legível para operações comuns de união vertical e horizontal. Embora numpy.stack() seja uma função mais geral para unir arrays ao longo de um novo eixo, vstack() e hstack() podem ser vistas como casos específicos ou conveniências sintáticas. vstack() empilha arrays verticalmente, o que é equivalente a stack(axis=0) para arrays 1D (após uma remodelação implícita para 2D) e 2D. hstack() empilha arrays horizontalmente; para arrays 1D, é similar a concatenate ao longo do primeiro eixo, mas para arrays de maior dimensão, hstack concatena ao longo do segundo eixo, enquanto stack(axis=1) insere um novo eixo na posição 1.² A compreensão de sua relação com stack e concatenate ajuda a escolher a ferramenta mais apropriada e a prever o comportamento de dimensionalidade.
+
+A tabela a seguir resume as principais diferenças entre as funções de empilhamento e concatenação do NumPy:
+
+| Função | Ação Principal | Altera Dimensionalidade? | Requisito de Forma dos Arrays de Entrada | Comportamento com Arrays 1D | Eixo Padrão/Principal |
+|--------|----------------|--------------------------|------------------------------------------|----------------------------|---------------------|
+| numpy.stack() | Empilha ao longo de um novo eixo | Sim (aumenta em 1) | Devem ter a mesma forma exata | Transforma para 2D (e.g., (N,) -> (1, N) antes de empilhar) | axis=0 (novo eixo) |
+| numpy.vstack() | Empilha verticalmente (linha por linha) | Sim (para 1D), Não (para >1D) | Mesma forma em todos os eixos, exceto o primeiro | Remodelados implicitamente para (1, N) antes de empilhar | Eixo 0 (concatenação) |
+| numpy.hstack() | Empilha horizontalmente (coluna por coluna) | Não | Mesma forma em todos os eixos, exceto o segundo | Concatena diretamente ao longo do primeiro eixo | Eixo 1 (concatenação) |
+| numpy.concatenate() | Une ao longo de um eixo existente | Não | Mesma forma em todos os eixos, exceto o eixo de concatenação | Concatena diretamente ao longo do eixo especificado | Requer axis explícito (ou 0 por padrão) |
+
+## numpy.vstack: Empilhamento Vertical de Arrays
+
+A função numpy.vstack() é uma ferramenta especializada no NumPy, projetada para empilhar arrays verticalmente, ou seja, linha por linha, para formar um único array coeso.⁴ Ela aceita uma sequência de arrays e os une ao longo do primeiro eixo (eixo 0). Uma característica importante de vstack() é seu tratamento de arrays unidimensionais: arrays com forma (N,) são implicitamente remodelados para (1, N) (ou seja, uma única linha) antes de serem empilhados.⁴ Essa remodelação automática é uma funcionalidade-chave que a torna extremamente conveniente para transformar coleções de vetores 1D em uma matriz 2D, onde cada vetor se torna uma linha.
+
+### Parâmetros de numpy.vstack
+
+A função numpy.vstack() possui um único parâmetro principal:
+
+- **tup**: Uma sequência (como uma tupla ou lista) de arrays a serem empilhados. Para que a operação seja bem-sucedida, os arrays de entrada devem ter a mesma forma em todos os eixos, exceto no primeiro eixo (o eixo de concatenação). Para arrays 1D, isso significa que devem ter o mesmo comprimento.⁴ Esta restrição é fundamental para garantir que o array resultante seja uma estrutura retangular válida. Se os arrays tiverem formas diferentes ao longo do primeiro eixo, numpy.vstack() levantará um ValueError.⁴
+
+### Valor de Retorno
+
+numpy.vstack() retorna um novo ndarray que é o resultado do empilhamento vertical dos arrays fornecidos.⁴ É importante notar que a função não modifica os arrays originais; ela sempre produz um novo array.
+
+### Exemplos Práticos
+
+Os exemplos a seguir ilustram o uso de numpy.vstack() em diferentes cenários:
+
+#### Exemplo 1: Empilhamento Vertical de Arrays 1D
+
+```python
+import numpy as np
+
+x = np.array([3, 5, 7])
+y = np.array([5, 7, 9])
+result = np.vstack((x, y))
+print("Arrays 1D empilhados verticalmente:\n", result)
+print("Forma do array resultante:", result.shape)
+```
+
+**Saída:**
+```
+Arrays 1D empilhados verticalmente:
+[[3 5 7]
+ [5 7 9]]
+Forma do array resultante: (2, 3)
+```
+
+Neste exemplo, os arrays 1D x e y são tratados como arrays (1, 3) antes do empilhamento, resultando em um array 2D de forma (2, 3).
+
+#### Exemplo 2: Empilhamento Vertical de Arrays 2D
+
+```python
+x = np.array([[1], [2], [3]])
+y = np.array([[4], [5], [6]])
+result = np.vstack((x, y))
+print("\nArrays 2D empilhados verticalmente:\n", result)
+print("Forma do array resultante:", result.shape)
+```
+
+**Saída:**
+```
+Arrays 2D empilhados verticalmente:
+[[1]
+ [2]
+ [3]
+ [4]
+ [5]
+ [6]]
+Forma do array resultante: (6, 1)
+```
+
+#### Exemplo 3: Combinando Múltiplos Arrays 2D
+
+```python
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6], [7, 8]])
+c = np.array([[9, 10], [11, 12]])
+result = np.vstack((a, b, c))
+print("\nMúltiplos arrays 2D empilhados verticalmente:\n", result)
+print("Forma do array resultante:", result.shape)
+```
+
+**Saída:**
+```
+Múltiplos arrays 2D empilhados verticalmente:
+[[ 1  2]
+ [ 3  4]
+ [ 5  6]
+ [ 7  8]
+ [ 9 10]
+ [11 12]]
+Forma do array resultante: (6, 2)
+```
+
+### Casos de Uso
+
+numpy.vstack() é útil em diversas situações práticas:
+
+- **Combinar Múltiplos Arrays 1D em um Array 2D**: Frequentemente utilizado para transformar uma coleção de vetores de características (features) em uma matriz de dados, onde cada vetor se torna uma linha.
+
+- **Mesclar Múltiplos Arrays 2D Linha por Linha**: Ideal para combinar conjuntos de dados que possuem as mesmas colunas, mas diferentes registros (linhas), como adicionar novos pontos de dados a um dataset existente.
+
+- **Anexar Linhas a um Array 2D Existente**: Permite adicionar novas observações ou registros a um conjunto de dados bidimensional de forma eficiente.⁴
+
+### Considerações Importantes
+
+#### Forma Consistente (Exceto Eixo 0)
+
+É fundamental que todos os arrays de entrada tenham a mesma forma em todos os eixos, exceto no primeiro (o eixo de concatenação). Para arrays 2D, isso significa que o número de colunas deve ser idêntico. Para arrays 1D, o comprimento deve ser o mesmo. Essa restrição é crucial para garantir a integridade estrutural do array empilhado e evitar ValueErrors.⁴
+
+#### Remodelação Implícita de Arrays 1D
+
+A funcionalidade de vstack de remodelar arrays 1D (N,) para (1, N) antes do empilhamento vertical é uma conveniência notável. Ela simplifica a preparação de dados, permitindo a combinação direta de dados unidimensionais em uma estrutura bidimensional sem a necessidade de etapas de remodelação explícitas. No entanto, é importante que o usuário compreenda que a dimensionalidade dos arrays 1D está sendo aumentada para 2D antes do empilhamento.⁴
+
+#### Não Modifica Arrays Originais
+
+Como muitas funções NumPy, vstack() retorna um novo array e não modifica os arrays de entrada originais.⁴
+
+## numpy.transpose: Permutando Eixos de Arrays
+
+A função numpy.transpose() (ou o método equivalente ndarray.transpose(), ou o atributo conveniente .T) é uma operação fundamental para permutar as dimensões, ou eixos, de um array NumPy. Ela permite reorganizar a estrutura lógica dos dados sem necessariamente copiar os dados subjacentes, tornando-a uma operação eficiente em termos de memória. Para um array 2D, transpose realiza a transposição de matriz padrão, trocando linhas por colunas. Para arrays de N dimensões, ela possibilita uma reordenação arbitrária dos eixos, o que é crucial em diversas aplicações de processamento de dados e álgebra linear.
+
+### Parâmetros de numpy.transpose
+
+- **a**: O array de entrada que se deseja transpor.
+- **axes**: Este é um parâmetro opcional que define a nova ordem dos eixos. Sua flexibilidade é o cerne da capacidade de transpose de manipular arrays multidimensionais.
+
+### Comportamento para Arrays 1D e 2D
+
+O comportamento de numpy.transpose() varia ligeiramente dependendo da dimensionalidade do array de entrada:
+
+#### Array 1D
+
+Para um array 1D, numpy.transpose() retorna uma view inalterada do array original.⁵ Isso ocorre porque um vetor 1D possui apenas um eixo, e a operação de transposição, que se refere à permutação de eixos, não tem efeito sobre sua forma. Essa é uma fonte comum de confusão para iniciantes, pois a expectativa de obter um "vetor coluna" de um vetor linha 1D não é atendida diretamente por transpose. Para converter um array 1D em um vetor coluna 2D, é necessário adicionar explicitamente uma dimensão extra, por exemplo, usando `np.atleast_2d(a).T` ou `a[:, np.newaxis]`.
+
+#### Array 2D
+
+Para um array 2D, transpose executa a transposição de matriz padrão, efetivamente trocando as linhas pelas colunas.⁵
+
+```python
+import numpy as np
+
+a = np.array([[1, 2], [3, 4]])
+print("Array 2D original:\n", a)
+transposed_a = np.transpose(a)
+print("\nArray 2D transposto:\n", transposed_a)
+```
+
+**Saída:**
+```
+Array 2D original:
+[[1 2]
+ [3 4]]
+
+Array 2D transposto:
+[[1 3]
+ [2 4]]
+```
+
+### Compreendendo o Parâmetro axes em numpy.transpose
+
+O parâmetro axes em numpy.transpose (ou ndarray.transpose(*axes)) oferece um controle preciso sobre como os eixos de um array são reordenados. Ele pode assumir algumas formas distintas, cada uma resultando em um efeito específico nas dimensões do array.⁶
+
+#### 1. axes=None ou Sem Argumento
+
+Quando o parâmetro axes é None ou nenhum argumento é fornecido, a ordem dos eixos é invertida. Este é o comportamento padrão da função. Se o array original possui uma forma (d0, d1,..., dn-1), o array transposto resultante terá a forma (dn-1,..., d1, d0).⁵
+
+##### Exemplos:
+
+**Array 2D:**
+```python
+a = np.array([[1, 2], [3, 4]])
+print("Array 2D original:\n", a)
+transposed_a = a.transpose()  # Equivalente a a.transpose(None)
+print("\nArray 2D transposto (axes=None):\n", transposed_a)
+```
+
+**Saída:**
+```
+Array 2D original:
+[[1 2]
+ [3 4]]
+
+Array 2D transposto (axes=None):
+[[1 3]
+ [2 4]]
+```
+
+Neste exemplo 2D, os eixos originais são 0 e 1. Invertê-los resulta na ordem (1, 0), que efetivamente troca linhas e colunas, produzindo a transposta da matriz.
+
+**Array 1D:**
+```python
+a = np.array([1, 2, 3, 4])
+print("Array 1D original:\n", a)
+print(f"Shape array 1D original:{a.shape}")
+transposed_a = a.transpose()
+print("\nArray 1D transposto (axes=None):\n", transposed_a)
+print(f"Shape array 1D transposto:{transposed_a.shape}")
+```
+
+**Saída:**
+```
+Array 1D original:
+[1 2 3 4]
+
+Array 1D transposto (axes=None):
+[1 2 3 4]
+```
+
+Para um array 1D, inverter a ordem dos eixos não altera nada, pois há apenas um eixo. A forma permanece a mesma (4,).
+
+**Array 3D:**
+```python
+print(f"Array 1D original:{np.arange(24)}")
+print(f"Shape array 1D original:{np.arange(24).shape}")
+
+a = np.arange(24).reshape(2, 3, 4)
+print(f"Array 3D original (shape {a.shape}):\n{a}")
+transposed_a = a.transpose()
+print("\nArray 3D transposto (axes=None, shape {}):\n".format(transposed_a.shape), transposed_a)
+```
+
+**Saída:**
+```
+Array 1D original:[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]
+Shape array 1D original:(24,)
+Array 3D original (shape (2, 3, 4)):
+[[[ 0  1  2  3]
+  [ 4  5  6  7]
+  [ 8  9 10 11]]
+
+ [[12 13 14 15]
+  [16 17 18 19]
+  [20 21 22 23]]]
+
+Array 3D transposto (axes=None, shape (4, 3, 2)):
+[[[ 0 12]
+  [ 4 16]
+  [ 8 20]]
+
+ [[ 1 13]
+  [ 5 17]
+  [ 9 21]]
+
+ [[ 2 14]
+  [ 6 18]
+  [10 22]]
+
+ [[ 3 15]
+  [ 7 19]
+  [11 23]]]
+```
+
+Os eixos originais são 0, 1, 2. Invertê-los significa que a nova ordem dos eixos será 2, 1, 0. Consequentemente, a forma original (2, 3, 4) torna-se (4, 3, 2) no array transposto.⁶
+
+#### 2. axes=tuple of ints
+
+Esta é a maneira mais flexível e poderosa de especificar a nova ordem dos eixos. A lógica de mapeamento é a seguinte: se um inteiro i está na j-ésima posição da tupla axes, isso significa que o i-ésimo eixo original do array se tornará o j-ésimo eixo do array transposto. A tupla fornecida deve ser uma permutação de 0, 1,..., N-1, onde N é o número de dimensões do array. Compreender essa lógica de mapeamento é fundamental para manipular corretamente arrays multidimensionais complexos, como dados de imagem com canais ou dados de vídeo com múltiplas dimensões, pois um entendimento incorreto pode levar a formas de array inesperadas e erros lógicos em algoritmos.
+
+##### Exemplos:
+
+**Array 2D:**
+```python
+a = np.array([[1, 2], [3, 4]])
+print("Array 2D original:\n", a)
+transposed_a = a.transpose((1, 0))
+print("\nArray 2D transposto (axes=(1, 0)):\n", transposed_a)
+```
+
+**Saída:**
+```
+Array 2D original:
+[[1 2]
+ [3 4]]
+
+Array 2D transposto (axes=(1, 0)):
+[[1 3]
+ [2 4]]
+```
+
+Aqui, (1, 0) significa que o eixo original no índice 1 (colunas) se torna o novo eixo no índice 0, e o eixo original no índice 0 (linhas) se torna o novo eixo no índice 1. Isso efetivamente troca linhas e colunas.
+
+**Array 3D:** Usando o mesmo array 3D a com forma (2, 3, 4):
+- Eixo 0: Representa os "blocos" ou "camadas" (tamanho 2)
+- Eixo 1: Representa as "linhas dentro de cada bloco" (tamanho 3)
+- Eixo 2: Representa as "colunas dentro de cada linha" (tamanho 4)
+
+**Exemplo a.transpose((0, 2, 1)):**
+```python
+a = np.arange(24).reshape(2, 3, 4)
+transposed_a = a.transpose((0, 2, 1))
+print("\nArray 3D transposto (axes=(0, 2, 1), shape {}):\n".format(transposed_a.shape), transposed_a)
+```
+
+**Saída:**
+```
+Array 3D transposto (axes=(0, 2, 1), shape (2, 4, 3)):
+[[[ 0  4  8]
+  [ 1  5  9]
+  [ 2  6 10]
+  [ 3  7 11]]
+
+ [[12 16 20]
+  [13 17 21]
+  [14 18 22]
+  [15 19 23]]]
+```
+
+Aqui, (0, 2, 1) significa: o eixo original 0 permanece como o novo eixo 0; o eixo original 2 se torna o novo eixo 1; e o eixo original 1 se torna o novo eixo 2. A nova forma será (tamanho_eixo0_original, tamanho_eixo2_original, tamanho_eixo1_original), ou seja, (2, 4, 3). Isso efetivamente troca a segunda e a terceira dimensões.
+
+**Exemplo a.transpose((2, 0, 1)):**
+```python
+transposed_a = a.transpose((2, 0, 1))
+print("\nArray 3D transposto (axes=(2, 0, 1), shape {}):\n".format(transposed_a.shape), transposed_a)
+```
+
+**Saída:**
+```
+Array 3D transposto (axes=(2, 0, 1), shape (4, 2, 3)):
+[[[ 0  4  8]
+  [12 16 20]]
+
+ [[ 1  5  9]
+  [13 17 21]]
+
+ [[ 2  6 10]
+  [14 18 22]]
+
+ [[ 3  7 11]
+  [15 19 23]]]
+```
+
+Aqui, (2, 0, 1) significa: o eixo original 2 se torna o novo eixo 0; o eixo original 0 se torna o novo eixo 1; e o eixo original 1 se torna o novo eixo 2. A nova forma será (tamanho_eixo2_original, tamanho_eixo0_original, tamanho_eixo1_original), ou seja, (4, 2, 3).⁶
+
+#### 3. axes=n ints
+
+Esta forma é uma alternativa de conveniência à forma de tupla. Em vez de encapsular os inteiros em uma tupla, eles são passados diretamente como argumentos separados. O comportamento é idêntico ao da forma tuple of ints.⁶
+
+##### Exemplo (Array 2D):
+```python
+a = np.array([[1, 2], [3, 4]])
+transposed_a = a.transpose(1, 0)
+print("\nArray 2D transposto (axes=1, 0):\n", transposed_a)
+```
+
+**Saída:**
+```
+Array 2D transposto (axes=1, 0):
+[[1 3]
+ [2 4]]
+```
+
+Este código produz o mesmo resultado que `a.transpose((1, 0))`.
+
+A tabela a seguir resume as diferentes formas do parâmetro axes e seus efeitos na ordem dos eixos:
+
+| Formato do axes | Explicação | Efeito na Ordem dos Eixos (Exemplo 3D) | Forma Original -> Transposta |
+|-----------------|------------|----------------------------------------|----------------------------|
+| None ou Sem Argumento | Inverte a ordem dos eixos | (0, 1, 2) -> (2, 1, 0) | (d0, d1, d2) -> (d2, d1, d0) |
+| tuple of ints | Mapeia o i-ésimo eixo original para o j-ésimo novo eixo, onde i está na j-ésima posição da tupla. Deve ser uma permutação de 0...N-1. | (0, 2, 1) significa: orig_0->new_0, orig_2->new_1, orig_1->new_2 | (d0, d1, d2) -> (d0, d2, d1) |
+| n ints | Alternativa de conveniência para tuple of ints, passando os inteiros diretamente. | Idêntico a tuple of ints | Idêntico a tuple of ints |
+
+### Valor de Retorno
+
+numpy.transpose retorna um ndarray que é o array de entrada com seus eixos permutados. É importante destacar que uma view do array original é retornada sempre que possível. Isso significa que a operação é geralmente muito eficiente em termos de memória, pois não há cópia de dados; o array transposto simplesmente compartilha os mesmos dados subjacentes com o array original. Consequentemente, qualquer modificação realizada no array transposto também afetará o array original. Se uma cópia independente for necessária, é fundamental usar .copy() explicitamente após a transposição para garantir que os arrays não compartilhem a mesma memória.
+
+### Casos de Uso
+
+numpy.transpose é uma função versátil com diversas aplicações:
+
+- **Álgebra Linear**: A transposição de matrizes é uma operação fundamental em cálculos de álgebra linear, como multiplicação de matrizes e resolução de sistemas lineares.
+
+- **Reordenação de Dimensões em Machine Learning e Processamento de Imagem**: É crucial para ajustar a ordem das dimensões de tensores para se adequar aos requisitos de entrada de modelos de aprendizado de máquina (por exemplo, converter o formato de imagem de (altura, largura, canais) para (canais, altura, largura)).
+
+- **Preparação de Dados**: Reorganizar conjuntos de dados para facilitar operações subsequentes, visualizações ou para compatibilidade com bibliotecas específicas.
+
+### Considerações Importantes
+
+#### View vs. Copy
+
+A natureza de numpy.transpose de retornar uma view sempre que possível é uma otimização de desempenho significativa, pois evita cópias de dados, o que é benéfico para arrays grandes. No entanto, o usuário deve estar ciente de que alterações no array transposto afetarão o original, exigindo cautela ou o uso explícito de .copy() quando a independência é necessária.
+
+#### Comportamento de Array 1D
+
+É crucial lembrar que transpose em um array 1D não altera sua forma. Para obter um vetor coluna 2D de um array 1D, são necessárias operações como `a[:, np.newaxis]` ou `np.atleast_2d(a).T`.
+
+#### Invertendo Transposição
+
+A transposição de tensores pode ser invertida usando a combinação `transpose(a, argsort(axes))`, o que é útil para desfazer uma permutação específica e retornar à ordem original dos eixos.
+
+#### Funções Relacionadas
+
+O NumPy oferece outras funções relacionadas que podem ser úteis para manipulação de eixos:
+
+- **ndarray.T**: Um atributo conveniente diretamente disponível em objetos ndarray que é equivalente a chamar ndarray.transpose() sem argumentos, revertendo a ordem dos eixos.⁵
+
+- **numpy.moveaxis**: Permite mover um ou mais eixos de um array para novas posições, o que pode ser mais intuitivo para certas reordenações complexas.
+
+- **numpy.swapaxes**: Troca dois eixos específicos de um array.⁶
 
 ### Cálculo para Deep Learning (1h10min)
 
