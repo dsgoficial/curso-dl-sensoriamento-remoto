@@ -1,7 +1,7 @@
 # Configuração básica do site
 title: "Deep Learning Aplicado ao Sensoriamento Remoto"
 description: "Curso avançado para mestrado e doutorado"
-baseurl: "/curso_Deep_Learning_Aplicado_ao_Sensoriamento_Remoto
+baseurl: "/curso_Deep_Learning_Aplicado_ao_Sensoriamento_Remoto"
 url: "https://dsgoficial.github.io"
 
 # Configuração do Jekyll
