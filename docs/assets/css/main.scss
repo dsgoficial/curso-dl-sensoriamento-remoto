@@ -1,0 +1,204 @@
+---
+---
+
+@import "minima";
+
+// Variáveis para tema acadêmico
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$accent-color: #e74c3c;
+$text-color: #333;
+$bg-color: #f8f9fa;
+
+// Layout geral
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// Navegação especializada para curso
+.course-nav {
+    background: $primary-color;
+    color: white;
+    padding: 1rem 0;
+    
+    .nav-links {
+        display: flex;
+        gap: 2rem;
+        
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+            
+            &:hover, &.active {
+                background: rgba(255,255,255,0.1);
+            }
+        }
+    }
+}
+
+// Estilo para conteúdo do módulo
+.module-content {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+// Table of Contents
+.toc {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: sticky;
+    top: 2rem;
+    max-height: calc(100vh - 4rem);
+    overflow-y: auto;
+    
+    h3 {
+        margin-top: 0;
+        color: $primary-color;
+        border-bottom: 2px solid $secondary-color;
+        padding-bottom: 0.5rem;
+    }
+    
+    ul {
+        list-style: none;
+        padding-left: 0;
+        
+        li {
+            margin: 0.5rem 0;
+            
+            a {
+                color: $text-color;
+                text-decoration: none;
+                display: block;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background: $secondary-color;
+                    color: white;
+                }
+            }
+            
+            ul {
+                padding-left: 1rem;
+                margin-top: 0.25rem;
+                
+                a {
+                    font-size: 0.9em;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+}
+
+// Estilo para código
+.highlight {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    pre {
+        margin: 0;
+        padding: 1.5rem;
+        background: #2d3748;
+        color: #e2e8f0;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        overflow-x: auto;
+        
+        code {
+            background: none;
+            border: none;
+            padding: 0;
+        }
+    }
+}
+
+// Caixas de destaque para conceitos importantes
+.concept-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    
+    h4 {
+        margin-top: 0;
+        color: white;
+    }
+    
+    &.warning {
+        background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        color: #333;
+        
+        h4 { color: #333; }
+    }
+    
+    &.tip {
+        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        color: #333;
+        
+        h4 { color: #333; }
+    }
+}
+
+// Equações matemáticas
+.MathJax {
+    font-size: 1.1em !important;
+}
+
+.MathJax_Display {
+    margin: 1.5rem 0 !important;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-left: 4px solid $secondary-color;
+    border-radius: 4px;
+}
+
+// Exercícios e exemplos de código
+.code-example {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin: 2rem 0;
+    
+    .example-header {
+        background: $primary-color;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        margin: 0;
+        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+    }
+    
+    .example-content {
+        padding: 1.5rem;
+    }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+    .module-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .toc {
+        position: static;
+        max-height: none;
+        margin-bottom: 2rem;
+    }
+}
