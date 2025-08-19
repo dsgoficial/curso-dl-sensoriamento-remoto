@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Início"
+title: "Deep Learning Aplicado ao Sensoriamento Remoto"
 description: "Curso de Deep Learning Aplicado ao Sensoriamento Remoto para pós-graduação"
 ---
 
