@@ -14,6 +14,8 @@ const sidebars = {
             'modulos/modulo1/introducao',
             'modulos/modulo1/setup',
             'modulos/modulo1/matematica',
+            'modulos/modulo1/numpy',
+            'modulos/modulo1/matplotlib_opencv',
             'modulos/modulo1/processamento-imagens',
           ],
         },

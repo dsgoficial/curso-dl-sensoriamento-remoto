@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 title: "Fundamentos de Processamento de Imagens"
 description: "Conceitos básicos de processamento digital de imagens, filtros e convolução com NumPy"
 tags: [processamento-imagens, numpy, filtros, convolução, segmentação]

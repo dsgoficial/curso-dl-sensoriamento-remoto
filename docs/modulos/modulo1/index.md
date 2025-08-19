@@ -14,6 +14,8 @@ Este módulo introdutório prepara os alunos com os fundamentos necessários par
 ## [1.1 Introdução ao Curso e Evolução da IA no Sensoriamento Remoto](./modulo1/introducao)
 **Duração:** 40min
 
+[Slides](/docs/recursos/slides/Curso_IA_UFMG_Aula1.pdf)
+
 Uma visão abrangente do curso e da evolução da IA aplicada ao sensoriamento remoto.
 
 **Tópicos Principais:**
@@ -49,6 +51,8 @@ Revisão focada dos conceitos matemáticos essenciais com implementação práti
 **Tópicos Principais:**
 - **Revisão de NumPy, Matplotlib e OpenCV**
 - **Práticas no Colab:** Implementação hands-on de operações básicas e visualizações
+- **numpy**: [Link para o Google Colab](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
+- **matplotlib e opencv**: [Link para o Google Colab](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
 
 **Intervalo:** 10min
 
