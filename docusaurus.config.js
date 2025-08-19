@@ -1,6 +1,6 @@
 const config = {
   title: 'Deep Learning Aplicado ao Sensoriamento Remoto',
-  tagline: 'Curso avançado para mestrado e doutorado - Cap Philipe Borba',
+  tagline: 'Curso elaborado e ministrado pela Diretoria de Serviço Geográfico (DSG)',
   
   url: 'https://dsgoficial.github.io',
   baseUrl: '/curso-dl-sensoriamento-remoto/',
@@ -55,6 +55,43 @@ const config = {
     
     footer: {
       style: 'dark',
+      links: [
+          {
+            title: 'Outras Plataformas',
+            items: [
+              {
+                label: 'BDGEx',
+                href: 'https://bdgex.eb.mil.br/bdgexapp'
+              },
+            ],
+          },
+          {
+            title: 'Organizações Militares',
+            items: [
+              {
+                label: 'DSG',
+                href: 'http://www.dsg.eb.mil.br/',
+              },
+              {
+                label: '1º CGEO',
+                href: 'http://www.1cgeo.eb.mil.br/',
+              },
+            ],
+          },
+          {
+            title: 'Mais',
+            items: [
+              {
+                label: 'GitHub 1º CGEO',
+                href: 'https://github.com/1cgeo',
+              },
+              {
+                label: 'GitHub DSG',
+                href: 'https://github.com/dsgoficial',
+              },
+            ],
+          },
+        ],
       copyright: `Copyright © ${new Date().getFullYear()} Cap Philipe Borba. Construído com Docusaurus.`,
     },
     
