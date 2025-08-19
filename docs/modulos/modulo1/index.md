@@ -21,7 +21,7 @@ Este módulo introdutório prepara os alunos com os fundamentos necessários par
 
 ### Estrutura do Módulo
 
-## [1.1 Introdução ao Curso e Evolução da IA no Sensoriamento Remoto]({{ '1-intro' | relative_url }})
+## [1.1 Introdução ao Curso e Evolução da IA no Sensoriamento Remoto]({{ '1-intro.md' | relative_url }})
 **Duração:** 40min
 
 Uma visão abrangente do curso e da evolução da IA aplicada ao sensoriamento remoto.
@@ -42,7 +42,7 @@ Uma visão abrangente do curso e da evolução da IA aplicada ao sensoriamento r
 
 ---
 
-## [1.2 Setup do Ambiente]({{ '2-setup' | relative_url }})
+## [1.2 Setup do Ambiente]({{ '2-setup.md' | relative_url }})
 **Duração:** 10min
 
 Configuração rápida e eficiente do ambiente de desenvolvimento.
@@ -58,7 +58,7 @@ Configuração rápida e eficiente do ambiente de desenvolvimento.
 
 ---
 
-## [1.3 Revisão Matemática com NumPy]({{ '3-revisao_matematica' | relative_url }})
+## [1.3 Revisão Matemática com NumPy]({{ '3-revisao_matematica.md' | relative_url }})
 **Duração:** 50min
 
 Revisão focada dos conceitos matemáticos essenciais com implementação prática.
@@ -74,7 +74,7 @@ Revisão focada dos conceitos matemáticos essenciais com implementação práti
 
 ---
 
-## [1.4 Fundamentos de Processamento de Imagens]({{ '4-fundamentos_proc_imagens' | relative_url }})
+## [1.4 Fundamentos de Processamento de Imagens]({{ '4-fundamentos_proc_imagens.md' | relative_url }})
 **Duração:** 2h
 
 Base sólida em processamento digital de imagens usando NumPy.
