@@ -14,7 +14,7 @@ Este módulo introdutório prepara os alunos com os fundamentos necessários par
 ## [1.1 Introdução ao Curso e Evolução da IA no Sensoriamento Remoto](./modulo1/introducao)
 **Duração:** 40min
 
-[Slides](/docs/recursos/slides/Curso_IA_UFMG_Aula1.pdf)
+[Slides](https://drive.google.com/file/d/1bDJ6X2Av_ROnTqiR40GiDWXZvWi89_1R/view?usp=sharing)
 
 Uma visão abrangente do curso e da evolução da IA aplicada ao sensoriamento remoto.
 
