@@ -1,13 +1,13 @@
 ---
-prev_page: "/modulos/modulo1/index"
-next_page: "/modulos/modulo1/2-setup"
+sidebar_position: 2
+title: "Introdução ao Curso e Evolução da IA"
+description: "Contextualização histórica da IA e aplicações no sensoriamento remoto"
+tags: [IA, história, sensoriamento-remoto, deep-learning]
 ---
 
-# Módulo 1: Fundamentos e Contexto
+# Introdução ao Curso e Evolução da IA
 
-## Introdução ao Curso e Evolução da IA
-
-### Contextualização e Evolução da IA
+## Contextualização e Evolução da IA
 
 ### Das Origens ao Deep Learning
 
@@ -21,7 +21,7 @@ O renascimento das redes neurais ocorreu nos anos 1980, impulsionado pela redesc
 
 O verdadeiro ponto de virada, que culminou na revolução do Deep Learning, ocorreu em 2012 com a **AlexNet** no desafio ImageNet. A AlexNet não apenas venceu a competição, mas o fez com uma margem de erro significativamente menor do que os concorrentes, estabelecendo o Deep Learning como o paradigma dominante em visão computacional. Esse evento demonstrou a aplicação prática e o poder das redes neurais profundas em larga escala, marcando o fim do "Inverno da IA" e o início da era atual do Deep Learning.
 
-### Marcos Históricos em Visão Computacional
+## Marcos Históricos em Visão Computacional
 
 A visão computacional foi um dos campos mais transformados pela ascensão do Deep Learning, com marcos arquitetônicos que definiram o estado da arte:
 
@@ -39,7 +39,7 @@ A visão computacional foi um dos campos mais transformados pela ascensão do De
 
 - **Estado Atual: SAM e Modelos Multimodais**: O campo continua a evoluir com modelos como o Segment Anything Model (SAM), que é um sistema de segmentação promptable com generalização zero-shot para objetos e imagens desconhecidas, sem a necessidade de treinamento adicional. Além disso, a tendência crescente de **modelos multimodais** (como PaliGemma, GPT-4o, CLIP), que integram informações de diferentes modalidades (e.g., imagem e texto), está abrindo novas fronteiras na compreensão visual e linguística.
 
-### Deep Learning no Sensoriamento Remoto
+## Deep Learning no Sensoriamento Remoto
 
 A aplicação do Deep Learning ao Sensoriamento Remoto representa uma transição histórica e um avanço significativo na análise de dados geoespaciais.
 
@@ -56,4 +56,3 @@ No entanto, essa transição não foi isenta de desafios:
 Apesar desses desafios, as **tendências atuais** no Deep Learning para sensoriamento remoto são promissoras:
 
 - **Modelos de Fundação (Foundation Models)**: Modelos grandes, pré-treinados em vastos conjuntos de dados não rotulados, que podem ser ajustados para diversas tarefas downstream com poucos dados específicos. Eles prometem democratizar a análise geoespacial avançada, simplificando os requisitos técnicos.
-

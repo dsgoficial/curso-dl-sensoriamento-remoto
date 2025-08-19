@@ -1,0 +1,16 @@
+{
+  "label": "Módulo 1: Fundamentos e Contexto (4h)",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "title": "Módulo 1: Fundamentos e Contexto",
+    "description": "Introdução ao curso, evolução da IA e fundamentos de processamento de imagens.",
+    "keywords": ["fundamentos", "contexto", "processamento imagens"]
+  },
+  "collapsed": false,
+  "customProps": {
+    "duration": "4h",
+    "difficulty": "Iniciante",
+    "type": "EAD"
+  }
+}

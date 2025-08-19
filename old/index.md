@@ -1,12 +1,11 @@
 ---
-layout: default
+sidebar_position: 1
 title: "Deep Learning Aplicado ao Sensoriamento Remoto"
 description: "Curso de Deep Learning Aplicado ao Sensoriamento Remoto para pós-graduação"
 ---
 
 # Deep Learning Aplicado ao Sensoriamento Remoto
 
-{: .concept-box .note}
 **Bem-vindo!** Este é um curso avançado de 56 horas (16h EAD + 40h presenciais) destinado a estudantes de mestrado e doutorado, ministrado pelo **Cap Philipe Borba**.
 
 ## Sobre o Curso

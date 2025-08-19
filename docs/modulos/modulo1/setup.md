@@ -1,11 +1,12 @@
 ---
-prev_page: "/modulos/modulo1/1-intro"
-next_page: "/modulos/modulo1/3-revisao_matematica"
+sidebar_position: 3
+title: "Setup do Ambiente"
+description: "Configuração do Google Colab e instalação de bibliotecas"
 ---
 
-## Setup do Ambiente (20min)
+# Setup do Ambiente (20min)
 
-### Google Colab - Setup Rápido (10min)
+## Google Colab - Setup Rápido (10min)
 
 O Google Colaboratory (Colab) é um serviço de Jupyter Notebook hospedado que não requer configuração e oferece acesso gratuito a recursos computacionais, incluindo GPUs e TPUs. É uma ferramenta ideal para machine learning, ciência de dados e educação, facilitando o compartilhamento de notebooks. O código é executado em máquinas virtuais nos servidores da nuvem do Google, permitindo alavancar o poder de hardware avançado independentemente da capacidade da máquina local do usuário.
 
@@ -40,14 +41,14 @@ print(f'Sua runtime tem {ram_gb:.1f} gigabytes de RAM disponível\n')
 
 É importante estar ciente dos limites de recursos dinâmicos do Colab, que podem flutuar, e desconectar-se do ambiente de execução quando não estiver em uso para evitar atingir esses limites.
 
-### Instalação de Bibliotecas (10min)
+## Instalação de Bibliotecas (10min)
 
 Para garantir que todos os alunos tenham o ambiente de desenvolvimento configurado de forma consistente, é fundamental apresentar um script automatizado para a instalação das bibliotecas necessárias ao curso.
 
 1. **Script Automatizado de Instalação**: É uma boa prática criar um script que instale todas as dependências de uma vez. Você pode usar o pip para isso. Um exemplo de script que pode ser executado em uma célula do Colab:
 
 ```python
-# Exemplo de instação de biblioteca para o curso
+# Exemplo de instalação de biblioteca para o curso
 !pip install rasterio
 ```
 

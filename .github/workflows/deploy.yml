@@ -1,8 +1,9 @@
-name: Deploy GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -17,33 +18,28 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./docs
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.1'
-          bundler-cache: true
-          working-directory: ./docs
+          fetch-depth: 0
           
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+          
+      - name: Install dependencies
+        run: npm ci
         
-      - name: Build with Jekyll
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
-        env:
-          JEKYLL_ENV: production
-          
-      - name: Upload artifact
+      - name: Build website
+        run: npm run build
+        
+      - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs/_site
+          path: build
 
   deploy:
     environment:
