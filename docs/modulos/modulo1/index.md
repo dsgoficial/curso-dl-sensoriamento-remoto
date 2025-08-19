@@ -51,8 +51,8 @@ Revisão focada dos conceitos matemáticos essenciais com implementação práti
 **Tópicos Principais:**
 - **Revisão de NumPy, Matplotlib e OpenCV**
 - **Práticas no Colab:** Implementação hands-on de operações básicas e visualizações
-- **numpy**: [Link para o Google Colab](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
-- **matplotlib e opencv**: [Link para o Google Colab](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
+- **numpy**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
+- **matplotlib e opencv**: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
 
 **Intervalo:** 10min
 

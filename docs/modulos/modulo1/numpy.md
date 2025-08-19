@@ -7,7 +7,7 @@ tags: [matemática, numpy, álgebra-linear, matplotlib]
 
 # Revisão Matemática com NumPy
 
-[Link para o Google Colab](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1KYUTJWf0Dv3-ULVJRG4zwHnOtrZlMhpG?usp=sharing)
 
 ## Álgebra Linear Aplicada
 

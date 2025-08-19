@@ -7,7 +7,7 @@ tags: [matemática, numpy, álgebra-linear, matplotlib]
 
 # Plotagem de Gráficos e Imagens com Matplotlib no Google Colab
 
-[Link para o Google Colab](https://colab.research.google.com/drive/1VvU0eQFI_8iUx8cB8HmSD6Z_rf5I-EAl?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VvU0eQFI_8iUx8cB8HmSD6Z_rf5I-EAl?usp=sharing)
 
 ## Introdução
 

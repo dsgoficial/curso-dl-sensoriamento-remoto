@@ -7,7 +7,7 @@ tags: [processamento-imagens, numpy, filtros, convolução, segmentação]
 
 # Processamento de Imagens
 
-[Link para o Google Colab](https://colab.research.google.com/drive/1BNviEc4y_hs9YOKI4B8SJstp97xAUznO?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1BNviEc4y_hs9YOKI4B8SJstp97xAUznO?usp=sharing)
 
 Este módulo estabelece as bases essenciais para a compreensão e aplicação de Deep Learning em tarefas de Visão Computacional, com foco particular no Sensoriamento Remoto. Iniciaremos com os fundamentos do processamento digital de imagens, compreendendo como as imagens são representadas e manipuladas computacionalmente usando a biblioteca NumPy. Em seguida, faremos uma transição para os conceitos fundamentais de Redes Neurais Artificiais (RNAs), culminando na introdução prática e teórica do PyTorch, a principal ferramenta que utilizaremos para construir e treinar modelos de Deep Learning. Ao final deste módulo, os alunos terão uma base sólida tanto em processamento de imagens clássico quanto nos pilares das redes neurais e do framework PyTorch, preparando-os para módulos mais avançados em Redes Convolucionais e aplicações específicas em Sensoriamento Remoto.
 
