@@ -1,4 +1,9 @@
-## 1.3 Revisão Matemática com NumPy (3h)
+---
+prev_page: "/modulos/modulo1/2-setup/"
+next_page: "/modulos/modulo1/4-fundamentos_proc_imagens/"
+---
+
+## Revisão Matemática com NumPy (3h)
 
 ### Álgebra Linear Aplicada (1h20min)
 
