@@ -1,6 +1,6 @@
 ---
 sidebar_position: 1
-title: "Visão Geral do Módulo"
+title: "Visão Geral do Módulo 1"
 description: "Introdução ao curso, evolução da IA e fundamentos de processamento de imagens"
 tags: [fundamentos, IA, processamento-imagens]
 ---

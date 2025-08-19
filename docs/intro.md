@@ -26,7 +26,7 @@ Este curso oferece uma formação completa em Deep Learning com foco específico
 **Duração:** 4h
 
 Introdução ao curso, evolução da IA e fundamentos de processamento de imagens.
-- [Visão Geral do Módulo](./modulos/modulo1)
+- [Visão Geral do Módulo 1](./modulos/modulo1)
 - [1.1 Introdução e Evolução da IA (40min)](./modulos/modulo1/introducao)
 - [1.2 Setup do Ambiente (10min)](./modulos/modulo1/setup)
 - [1.3 Revisão Matemática (50min)](./modulos/modulo1/matematica)
@@ -37,6 +37,7 @@ Introdução ao curso, evolução da IA e fundamentos de processamento de imagen
 
 Fundamentos de redes neurais e primeiras implementações práticas.
 
+- [Visão Geral do Módulo 2](./modulos/modulo2/visao_geral)
 - [2.1 Fundamentos de Redes Neurais (2h)](./modulos/modulo2/fundamentos/)
 - [2.2 Teoria do Treinamento e PyTorch (2h)](./modulos/modulo2/treinamento-pytorch/)
 

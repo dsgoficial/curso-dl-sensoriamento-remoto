@@ -17,14 +17,14 @@ const sidebars = {
             'modulos/modulo1/processamento-imagens',
           ],
         },
-        // {
-        //   type: 'category',
-        //   label: 'Módulo 2: Redes Neurais (4h)',
-        //   items: [
-        //     'modulos/modulo2/fundamentos',
-        //     'modulos/modulo2/treinamento-pytorch',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: 'Módulo 2: Redes Neurais (4h)',
+          items: [
+            'modulos/modulo2/visao_geral',
+            // 'modulos/modulo2/treinamento-pytorch',
+          ],
+        },
         // {
         //   type: 'category',
         //   label: 'Módulo 3: Treinamento (4h)',
