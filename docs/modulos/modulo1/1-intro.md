@@ -1,6 +1,6 @@
 ---
-prev_page: "/modulos/modulo1/index/"
-next_page: "/modulos/modulo1/2-setup/"
+prev_page: "/modulos/modulo1/index"
+next_page: "/modulos/modulo1/2-setup"
 ---
 
 # Módulo 1: Fundamentos e Contexto

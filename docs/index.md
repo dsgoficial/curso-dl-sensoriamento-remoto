@@ -31,10 +31,10 @@ Este curso oferece uma formação completa em Deep Learning com foco específico
         <p><strong>Duração:</strong> 4h</p>
         <p>Introdução ao curso, evolução da IA e fundamentos de processamento de imagens.</p>
         <ul>
-            <li><a href="{{ '/modulos/modulo1/introducao/' | relative_url }}">1.1 Introdução e Evolução da IA (40min)</a></li>
-            <li><a href="{{ '/modulos/modulo1/setup/' | relative_url }}">1.2 Setup do Ambiente (10min)</a></li>
-            <li><a href="{{ '/modulos/modulo1/matematica/' | relative_url }}">1.3 Revisão Matemática (50min)</a></li>
-            <li><a href="{{ '/modulos/modulo1/processamento-imagens/' | relative_url }}">1.4 Fundamentos de Processamento de Imagens (2h)</a></li>
+            <li><a href="{{ '/modulos/modulo1/1-intro' | relative_url }}">1.1 Introdução e Evolução da IA (40min)</a></li>
+            <li><a href="{{ '/modulos/modulo1/2-setup' | relative_url }}">1.2 Setup do Ambiente (10min)</a></li>
+            <li><a href="{{ '/modulos/modulo1/3-revisao_matematica' | relative_url }}">1.3 Revisão Matemática (50min)</a></li>
+            <li><a href="{{ '/modulos/modulo1/4-fundamentos_proc_imagens' | relative_url }}">1.4 Fundamentos de Processamento de Imagens (2h)</a></li>
         </ul>
     </div>
     

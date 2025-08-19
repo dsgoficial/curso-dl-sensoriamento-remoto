@@ -1,6 +1,6 @@
 ---
-prev_page: "/modulos/modulo1/1-intro/"
-next_page: "/modulos/modulo1/3-revisao_matematica/"
+prev_page: "/modulos/modulo1/1-intro"
+next_page: "/modulos/modulo1/3-revisao_matematica"
 ---
 
 ## Setup do Ambiente (20min)
