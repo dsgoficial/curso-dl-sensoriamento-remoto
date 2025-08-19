@@ -3,59 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | {{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     
     <!-- CSS principal -->
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     
-    <!-- Syntax highlighting -->
-    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
-    
     <!-- MathJax para equações matemáticas -->
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-            tex2jax: {
+    <script>
+        window.MathJax = {
+            tex: {
                 inlineMath: [['$','$'], ['\\(','\\)']],
                 displayMath: [['$$','$$'], ['\\[','\\]']],
                 processEscapes: true,
-                processEnvironments: true
+                processEnvironments: true,
+                tags: 'ams'
             },
-            TeX: {
-                equationNumbers: { autoNumber: "AMS" },
-                extensions: ["AMSmath.js", "AMSsymbols.js"]
+            options: {
+                ignoreHtmlClass: 'tex2jax_ignore',
+                processHtmlClass: 'tex2jax_process'
             }
-        });
+        };
     </script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
-    <!-- Prism.js para highlighting avançado -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <!-- Meta tags SEO -->
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="author" content="{{ site.author }}">
     
-    {% seo %}
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
 </head>
 <body>
-    {% include navigation.html %}
+    <header class="site-header">
+        <div class="container">
+            <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+        </div>
+    </header>
     
-    <main class="container">
-        <article class="content">
-            {% if page.toc %}
-                <aside class="toc">
-                    {% include_relative toc.html html=content %}
-                </aside>
-            {% endif %}
-            
-            <div class="main-content">
-                {{ content }}
+    <nav class="site-nav">
+        <div class="container">
+            <div class="nav-links">
+                <a href="{{ '/' | relative_url }}">Início</a>
+                <a href="{{ '/modulos/' | relative_url }}">Módulos</a>
+                <a href="{{ '/exercicios/' | relative_url }}">Exercícios</a>
+                <a href="{{ '/recursos/' | relative_url }}">Recursos</a>
+                <a href="{{ '/sobre/' | relative_url }}">Sobre</a>
             </div>
-        </article>
+        </div>
+    </nav>
+    
+    <main class="page-content">
+        <div class="container">
+            {{ content }}
+        </div>
     </main>
     
-    {% include footer.html %}
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Material educacional para pós-graduação.</p>
+        </div>
+    </footer>
     
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

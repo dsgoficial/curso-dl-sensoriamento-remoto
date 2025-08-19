@@ -7,7 +7,6 @@ url: "https://dsgoficial.github.io/curso_Deep_Learning_Aplicado_ao_Sensoriamento
 # Configuração do Jekyll
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
 # Configuração do Kramdown para matemática
 kramdown:
