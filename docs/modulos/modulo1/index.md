@@ -110,4 +110,4 @@ O Módulo 2 introduz os fundamentos de redes neurais, construindo sobre os conce
 
 ## Progresso do Curso
 
-Módulo 1 de 4 (EAD) • Primeira Semana
+Módulo 1 de 4 (EAD) • Primeiro Dia
