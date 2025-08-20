@@ -5,6 +5,7 @@ description: "Métricas de treinamento, overfit e underfit"
 tags: [iou, f1 score, precision, recall, ROC AUC, accuracy, underfit, overfit, EarlyStopping, tensorboard]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qTZ1m1DmbOoZeYaK9RTjbMg-NY5rIDcJ?usp=sharing)
 
 # 1. Métricas de Avaliação Essenciais
 

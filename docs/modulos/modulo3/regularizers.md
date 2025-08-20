@@ -5,6 +5,8 @@ description: "Técnicas que ajudam a estabilizar o processo de treinamento, acel
 tags: [dropout, weight decay, batch normalization]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16EIyfH-Q5wlz6eUQVTFeqs8O0xMH1iRW?usp=sharing)
+
 # Técnicas de Regularização
 
 A regularização é um conjunto de técnicas utilizadas em machine learning para melhorar o desempenho de um modelo, reduzindo sua complexidade e, principalmente, prevenindo o overfitting. Ela desencoraja o modelo de ajustar-se ao ruído ou a padrões excessivamente complexos nos dados de treinamento, garantindo que ele capture as tendências subjacentes sem se tornar muito específico para o conjunto de treinamento.

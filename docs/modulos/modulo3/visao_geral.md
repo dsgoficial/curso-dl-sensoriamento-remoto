@@ -11,7 +11,7 @@ Este módulo aprofunda as técnicas fundamentais para treinamento eficiente e ro
 
 # Estrutura do Módulo
 
-## [3.1 Training Loop Completo: Integrando Tudo](./modulo3/treinamento_completo)
+## [3.1 Training Loop Completo: Integrando Tudo](./treinamento_completo)
 **Duração:** 45min
 
 Anatomia completa do loop de treinamento e integração de todos os componentes essenciais.
@@ -25,7 +25,7 @@ Anatomia completa do loop de treinamento e integração de todos os componentes 
 
 ---
 
-## [3.2 Dataset e DataLoader Avançado](./modulo3/dataloader)
+## [3.2 Dataset e DataLoader Avançado](./dataloader)
 **Duração:** 50min
 
 Preparação e carregamento eficiente de dados com técnicas de otimização de performance.
@@ -47,7 +47,7 @@ Preparação e carregamento eficiente de dados com técnicas de otimização de 
 
 ---
 
-## [3.3 Funções de Perda (Losses)](./modulo3/losses)
+## [3.3 Funções de Perda (Losses)](./losses)
 **Duração:** 1h
 
 Fundamentos teóricos e aplicações práticas das funções de perda em Deep Learning.
@@ -70,7 +70,7 @@ Fundamentos teóricos e aplicações práticas das funções de perda em Deep Le
 
 ---
 
-## [3.4 Learning Rate Schedulers](./modulo3/learning_rate_schedulers)
+## [3.4 Learning Rate Schedulers](./learning_rate_schedulers)
 **Duração:** 55min
 
 Otimização dinâmica da taxa de aprendizado para acelerar convergência e melhorar performance.
@@ -90,7 +90,7 @@ Otimização dinâmica da taxa de aprendizado para acelerar convergência e melh
 
 ---
 
-## [3.5 Checkpointing](./modulo3/checkpointing)
+## [3.5 Checkpointing](./checkpointing)
 **Duração:** 35min
 
 Salvamento e restauração de modelos para resiliência e reprodutibilidade.
@@ -111,7 +111,7 @@ Salvamento e restauração de modelos para resiliência e reprodutibilidade.
 
 ---
 
-## [3.6 Avaliação e Diagnóstico do Treinamento](./modulo3/avaliacao_treinamento)
+## [3.6 Avaliação e Diagnóstico do Treinamento](./avaliacao_treinamento)
 **Duração:** 1h
 
 Métricas de avaliação, diagnóstico de problemas e monitoramento avançado.
@@ -130,11 +130,11 @@ Métricas de avaliação, diagnóstico de problemas e monitoramento avançado.
   - Matriz de confusão e visualização de imagens
   - Monitoramento de gradientes e ativações
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1mno)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qTZ1m1DmbOoZeYaK9RTjbMg-NY5rIDcJ?usp=sharing)
 
 ---
 
-## [3.7 Técnicas de Regularização](./modulo3/regularizers)
+## [3.7 Técnicas de Regularização](./regularizers)
 **Duração:** 50min
 
 Técnicas para estabilizar treinamento e melhorar generalização.
@@ -147,11 +147,11 @@ Técnicas para estabilizar treinamento e melhorar generalização.
 - **Gradient Accumulation:** Simulação de batches maiores
 - **Comparativo de Técnicas:** Quando usar cada abordagem
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1pqr)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16EIyfH-Q5wlz6eUQVTFeqs8O0xMH1iRW?usp=sharing)
 
 ---
 
-## [3.8 Exercício Prático Integrado](./modulo3/treinamento_completo)
+## [3.8 Exercício Prático Integrado](./treinamento_completo)
 **Duração:** 1h15min
 
 Sistema completo de treinamento integrando todas as técnicas aprendidas.
@@ -166,7 +166,7 @@ Sistema completo de treinamento integrando todas as técnicas aprendidas.
 - **Análise Comparativa:** Com e sem balanceamento de classes
 - **Visualizações Avançadas:** Análise de resultados e insights
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1stu)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xHlhGBJ0A-uU9mXB9fq5BvdXt_XSJxRG?usp=sharing)
 
 ## Preparação para o Módulo 4
 

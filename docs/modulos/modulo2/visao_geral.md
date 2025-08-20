@@ -11,7 +11,7 @@ Este módulo estabelece os fundamentos teóricos e práticos das redes neurais, 
 
 # Estrutura do Módulo
 
-## [2.1 PyTorch Fundamentals](./modulo2/pytorch_vs_numpy)
+## [2.1 PyTorch Fundamentals](./pytorch_vs_numpy)
 **Duração:** 45min
 
 Transição do NumPy para PyTorch e introdução aos tensors como estrutura de dados fundamental.
@@ -29,7 +29,7 @@ Transição do NumPy para PyTorch e introdução aos tensors como estrutura de d
 
 ---
 
-## [2.2 Cálculo para Deep Learning](./modulo2/calculo_dl)
+## [2.2 Cálculo para Deep Learning](./calculo_dl)
 **Duração:** 40min
 
 Revisão focada dos conceitos matemáticos essenciais para compreender o funcionamento das redes neurais.
@@ -49,7 +49,7 @@ Revisão focada dos conceitos matemáticos essenciais para compreender o funcion
 
 ---
 
-## [2.3 O Perceptron e Redes Neurais](./modulo2/perceptron)
+## [2.3 O Perceptron e Redes Neurais](./perceptron)
 **Duração:** 1h
 
 Introdução aos fundamentos das redes neurais, desde o perceptron simples até conceitos avançados.
