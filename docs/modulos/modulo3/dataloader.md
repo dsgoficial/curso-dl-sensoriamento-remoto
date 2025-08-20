@@ -200,7 +200,7 @@ time_optimized = benchmark_dataloader(dataloader_optimized, "Configuração Otim
 
 # 4. Comparação com diferentes números de workers
 print("\n=== Teste de Escalabilidade (num_workers) ===")
-worker_counts = [0, 1, 2, 4, 8]
+worker_counts = [0, 1, 2, 3, 4]
 worker_times = []
 
 for num_workers in worker_counts:
@@ -209,7 +209,7 @@ for num_workers in worker_counts:
         batch_size=batch_size, 
         shuffle=True,
         num_workers=num_workers,
-        prefetch_factor=2 if num_workers > 0 else 2,
+        prefetch_factor=2 if num_workers > 0 else None,
         pin_memory=True if num_workers > 0 else False
     )
     
