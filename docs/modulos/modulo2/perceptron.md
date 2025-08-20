@@ -7,7 +7,9 @@ tags: [perceptron, mlp]
 
 ## Fundamentos de Redes Neurais Artificiais
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1A5yhlyKKzm7VU3qtE3Cr9rbYYNsTXYBx?usp=sharing)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1A5yhlyKKzm7VU3qtE3Cr9rbYYNsTXYBx?usp=sharing)
+
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hKdzzgJ7N2MmAIsgnziiLfmtgU-z79Zs?usp=sharing)
 
 **O Perceptron: Modelo Matemático e Intuição**
 

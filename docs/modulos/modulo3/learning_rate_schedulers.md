@@ -5,6 +5,8 @@ description: "Otimização Dinâmica da Taxa de Aprendizado em Deep Learning com
 tags: [learning rate scheduler, SequentialLR, StepLR, MultiStepLR, ExponentialLR, ReduceLROnPlateau, warm-up, OneCycleLR]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dlP13_1roCJ-xuDB4e4DunX6167kGSwb?usp=sharing)
+
 
 # 1. Introdução aos Schedulers de Learning Rate no PyTorch
 

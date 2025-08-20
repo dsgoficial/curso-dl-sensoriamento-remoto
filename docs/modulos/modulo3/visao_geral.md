@@ -11,7 +11,7 @@ Este módulo aprofunda as técnicas fundamentais para treinamento eficiente e ro
 
 # Estrutura do Módulo
 
-## [3.1 Training Loop Completo: Integrando Tudo](./modulo3/training_loop)
+## [3.1 Training Loop Completo: Integrando Tudo](./modulo3/treinamento_completo)
 **Duração:** 45min
 
 Anatomia completa do loop de treinamento e integração de todos os componentes essenciais.
@@ -86,7 +86,7 @@ Otimização dinâmica da taxa de aprendizado para acelerar convergência e melh
   - Ordem crítica: optimizer.step() vs scheduler.step()
 - **Melhores Práticas:** Visualização, ajuste de hiperparâmetros, LR Range Test
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VdIWWv6yG6msHY6eJyA5lgzAVABqoaN4?usp=sharing)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dlP13_1roCJ-xuDB4e4DunX6167kGSwb?usp=sharing)
 
 ---
 

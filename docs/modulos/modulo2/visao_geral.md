@@ -11,7 +11,7 @@ Este módulo estabelece os fundamentos teóricos e práticos das redes neurais, 
 
 # Estrutura do Módulo
 
-## [2.1 PyTorch Fundamentals](./modulo2/pytorch-fundamentals)
+## [2.1 PyTorch Fundamentals](./modulo2/pytorch_vs_numpy)
 **Duração:** 45min
 
 Transição do NumPy para PyTorch e introdução aos tensors como estrutura de dados fundamental.
@@ -29,7 +29,7 @@ Transição do NumPy para PyTorch e introdução aos tensors como estrutura de d
 
 ---
 
-## [2.2 Cálculo para Deep Learning](./modulo2/calculo-dl)
+## [2.2 Cálculo para Deep Learning](./modulo2/calculo_dl)
 **Duração:** 40min
 
 Revisão focada dos conceitos matemáticos essenciais para compreender o funcionamento das redes neurais.
@@ -49,7 +49,7 @@ Revisão focada dos conceitos matemáticos essenciais para compreender o funcion
 
 ---
 
-## [2.3 O Perceptron e Redes Neurais](./modulo2/perceptron-redes)
+## [2.3 O Perceptron e Redes Neurais](./modulo2/perceptron)
 **Duração:** 1h
 
 Introdução aos fundamentos das redes neurais, desde o perceptron simples até conceitos avançados.
@@ -65,28 +65,6 @@ Introdução aos fundamentos das redes neurais, desde o perceptron simples até 
   - Acumulação de gradientes
 
 **Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1A5yhlyKKzm7VU3qtE3Cr9rbYYNsTXYBx?usp=sharing)
-
-**Intervalo:** 10min
-
----
-
-## [2.4 Implementação Prática: MLP Completo](./modulo2/mlp-implementacao)
-**Duração:** 1h15min
-
-Implementação completa de um Multi-Layer Perceptron, integrando todos os conceitos aprendidos.
-
-**Tópicos Principais:**
-- **Estrutura `nn.Module`:** Base para construção de redes em PyTorch
-- **Dataset e DataLoader:** Gerenciamento eficiente de dados
-  - Criação de datasets personalizados
-  - Configuração de batches e carregamento paralelo
-- **Loop de Treinamento Completo:**
-  - Organização do código de treinamento
-  - Modos de treinamento vs. avaliação
-  - Checkpointing e salvamento de modelos
-- **Otimizadores:** SGD vs. Adam e configuração de hiperparâmetros
-- **Visualização com TensorBoard:** Monitoramento do treinamento
-- **Exercício Prático:** MLP no dataset MNIST
 
 **Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hKdzzgJ7N2MmAIsgnziiLfmtgU-z79Zs?usp=sharing)
 
