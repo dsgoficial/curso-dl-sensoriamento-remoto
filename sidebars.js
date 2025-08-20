@@ -27,17 +27,23 @@ const sidebars = {
             'modulos/modulo2/pytorch_vs_numpy',
             'modulos/modulo2/calculo_dl',
             'modulos/modulo2/perceptron',
-            // 'modulos/modulo2/treinamento-pytorch',
           ],
         },
-        // {
-        //   type: 'category',
-        //   label: 'Módulo 3: Treinamento (4h)',
-        //   items: [
-        //     'modulos/modulo3/training-loop',
-        //     'modulos/modulo3/fenomenos-treinamento',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: 'Módulo 3: Treinamento de Redes Neurais (4h)',
+          items: [
+            'modulos/modulo3/visao_geral',
+            'modulos/modulo3/training_loop',
+            'modulos/modulo3/dataloader',
+            'modulos/modulo3/losses',
+            'modulos/modulo3/learning_rate_schedulers',
+            'modulos/modulo3/checkpointing',
+            'modulos/modulo3/avaliacao_treinamento',
+            'modulos/modulo3/regularizers',
+            'modulos/modulo3/treinamento_completo',
+          ],
+        },
         // {
         //   type: 'category',
         //   label: 'Módulo 4: CNNs (4h)',

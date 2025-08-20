@@ -54,19 +54,62 @@
 - **Autograd:** requires_grad, método .backward(), acúmulo de gradientes, torch.no_grad()
 - **Otimizadores:** o que são e como usar
 
-### Módulo 3: Treinamento de redes neurais(4h)
+### Módulo 3: Treinamento de Redes Neurais (4h)
 
-**3.1 Training Loop Completo (2h)**
-- **Anatomia do Training Loop:** Forward, loss, backward, step integrados com hiperparâmetros
-- **Dataset e DataLoader:** modo train vs eval. Balanceamento de classes.
-- **Métricas de avaliação:** RMS, IoU, accuracy, recall, f1-score.
-- **Restaurar pesos:** salvar e restaurar pesos.
-- **Inferência:** inferência.
-- **Monitoramento:** Interpretação de loss curves, TensorBoard básico, debugging comum
+**3.1 Training Loop Completo e Preparação de Dados (1h15min)**
+- **Anatomia do Training Loop:** Estrutura fundamental (forward, loss, backward, step)
+- **Dataset e DataLoader para MNIST:** Carregamento eficiente com torchvision
+- **Modo train vs eval:** Quando e por que alternar entre modos
+- **Dataset e DataLoader Avançado:** 
+  - Otimização de performance (num_workers, prefetch factor, pin memory)
+  - Lidando com desbalanceamento de classes
+  - WeightedRandomSampler para balanceamento de batches
+- **Implementação Guiada:** Primeiro training loop funcional completo
 
-**3.2 Fenômenos do Treinamento (2h)**
-- **Underfit e overfit**
-- **Técnicas de Regularização:** Dropout, Weight Decay, Batch Normalization, Early Stopping com implementações práticas
+**Intervalo (10 min)**
+
+**3.2 Funções de Perda e Otimização (1h15min)**
+- **Funções de Perda Fundamentais:**
+  - MSE e MAE para regressão
+  - Binary Cross-Entropy e Categorical Cross-Entropy
+  - Importância do formato de entrada (logits vs probabilidades)
+- **Funções de Perda Avançadas:**
+  - Dice Loss e IoU Loss para segmentação
+  - Focal Loss para desequilíbrio de classes
+- **Learning Rate Schedulers:**
+  - StepLR, MultiStepLR, ExponentialLR
+  - ReduceLROnPlateau e OneCycleLR
+  - Ordem crítica: optimizer.step() vs scheduler.step()
+
+**Intervalo (10 min)**
+
+**3.3 Avaliação, Diagnóstico e Regularização (1h10min)**
+- **Métricas de Avaliação Essenciais:**
+  - Classificação: Accuracy, Precision, Recall, F1-Score, ROC AUC
+  - Regressão: RMSE, MAE
+  - Detecção/Segmentação: IoU (Intersection over Union)
+- **Underfitting e Overfitting:**
+  - Identificação através de curvas de perda (learning curves)
+  - Early Stopping: implementação e parametrização
+- **Técnicas de Regularização:**
+  - Dropout: prevenção de overfitting
+  - Weight Decay (L2 regularization)
+  - Batch Normalization: estabilização do treinamento
+  - Gradient Clipping e Gradient Accumulation
+
+**3.4 Checkpointing, Monitoramento e Integração (1h10min)**
+- **Checkpointing:**
+  - Salvar e restaurar state_dict do modelo e otimizador
+  - Restauração para retomar treinamento vs inferência
+  - Inferência eficiente: model.eval() e torch.no_grad()
+- **Monitoramento com TensorBoard:**
+  - Configuração básica e visualizações
+  - Matriz de confusão e visualização de métricas
+  - Interpretação de loss curves e debugging comum
+- **Exercício Prático Integrado:**
+  - Sistema completo integrando todas as técnicas
+  - Análise comparativa: com e sem balanceamento de classes
+  - Visualizações avançadas e insights
 
 ### Módulo 4: Introdução às CNNs (4h)
 

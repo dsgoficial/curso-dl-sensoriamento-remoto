@@ -102,7 +102,7 @@ Ao concluir este módulo, você deve estar preparado para:
 - ✅ Entender os conceitos que serão expandidos para CNNs
 
 :::tip Próximo Passo
-O Módulo 3 introduz as Redes Neurais Convolucionais (CNNs), expandindo os conceitos de MLPs para processamento de imagens com preservação de informação espacial.
+O Módulo 3 aprofunda os tópicos do treinamento de redes neurais.
 :::
 
 ## FAQ do Módulo
@@ -130,7 +130,7 @@ O Módulo 3 introduz as Redes Neurais Convolucionais (CNNs), expandindo os conce
 ## Navegação
 
 **Anterior:** [Módulo 1: Fundamentos e Processamento de Imagens](../modulo1/)  
-**Próximo:** [Módulo 3: Redes Neurais Convolucionais](../modulo3/)
+**Próximo:** [Módulo 3: Treinamento de redes neurais](../modulo3/)
 
 ## Progresso do Curso
 
