@@ -5,6 +5,7 @@ description: "Funções de Perda em Deep Learning com PyTorch: Teoria e Aplicaç
 tags: [loss, binary cross entropy, dice, MSE, MAE]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VdIWWv6yG6msHY6eJyA5lgzAVABqoaN4?usp=sharing)
 
 # Introdução às Funções de Perda em Deep Learning
 

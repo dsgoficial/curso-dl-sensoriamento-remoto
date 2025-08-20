@@ -5,6 +5,8 @@ description: "Preparação e Carregamento de Dados usando Dataset e Dataloader e
 tags: [treinamento, dataset, dataloader, desbalanceamento de classes]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1RRJwhLeIwZmMS6XMetbZhIDdsb8KmM3S?usp=sharing)
+
 # 1. Preparação e Carregamento de Dados usando Dataset e Dataloader em Pytorch
 
 Em PyTorch, a manipulação de dados é desacoplada do código de treinamento do modelo para promover modularidade e legibilidade. Para isso, são fornecidas duas primitivas de dados principais: `torch.utils.data.Dataset` e `torch.utils.data.DataLoader`.

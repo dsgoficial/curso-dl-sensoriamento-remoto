@@ -64,7 +64,7 @@ Fundamentos teóricos e aplicações práticas das funções de perda em Deep Le
 - **Perdas Compostas e Multi-tarefa:** Combinando múltiplas perdas
 - **Aplicações em Sensoriamento Remoto:** Casos de uso específicos
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1def)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1RRJwhLeIwZmMS6XMetbZhIDdsb8KmM3S?usp=sharing)
 
 **Intervalo:** 10min
 
@@ -86,7 +86,7 @@ Otimização dinâmica da taxa de aprendizado para acelerar convergência e melh
   - Ordem crítica: optimizer.step() vs scheduler.step()
 - **Melhores Práticas:** Visualização, ajuste de hiperparâmetros, LR Range Test
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ghi)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1VdIWWv6yG6msHY6eJyA5lgzAVABqoaN4?usp=sharing)
 
 ---
 
