@@ -242,8 +242,6 @@ A implementação de Early Stopping geralmente envolve o monitoramento de uma m�
 
 - **mode**: Define se o callback deve procurar um valor mínimo ("min", para perda) ou máximo ("max", para acurácia) da métrica monitorada.
 
-- **verbose**: Se True, imprime mensagens quando o Early Stopping é acionado.
-
 É uma prática comum salvar o estado do modelo (checkpoint) sempre que uma nova melhor perda de validação é alcançada. Isso garante que, se o Early Stopping for acionado, o melhor modelo encontrado durante o treinamento estará disponível.
 
 ## Exemplo de Código: Early Stopping em PyTorch (Implementação Manual)
