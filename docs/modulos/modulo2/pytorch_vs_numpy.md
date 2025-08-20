@@ -1,6 +1,13 @@
-## **PyTorch Fundamentals**
+---
+sidebar_position: 1
+title: "PyTorch Fundamentals"
+description: "pytorch"
+tags: [pytorch, nn, numpy]
+---
 
 ### **Tensors vs NumPy: Diferenças Essenciais**
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1h5UEJ4O4cGA5VY3xTczQTjjXJM15yymT?usp=sharing)
 
 PyTorch Tensors e NumPy Arrays são ambos containers multidimensionais para dados. No entanto, suas diferenças são fundamentais para o desenvolvimento de deep learning.
 

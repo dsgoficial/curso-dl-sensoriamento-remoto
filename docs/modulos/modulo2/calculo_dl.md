@@ -1,4 +1,9 @@
-# Cálculo para Deep Learning
+---
+sidebar_position: 2
+title: "Cálculo para Deep Learning"
+description: "Revisão de cálculo"
+tags: [matemática, cálculo, deep learning, gradientes, SGD]
+---
 
 O cálculo diferencial é a espinha dorsal da otimização em Deep Learning, fornecendo as ferramentas para que as redes neurais aprendam e melhorem seu desempenho.
 
@@ -6,20 +11,24 @@ O cálculo diferencial é a espinha dorsal da otimização em Deep Learning, for
 
 - **Derivada**: A derivada de uma função mede a taxa de variação instantânea de uma função em relação à sua entrada. Em termos simples, ela indica o quanto a função muda para uma pequena variação na entrada, e seu sinal indica a direção dessa mudança (se a função está aumentando ou diminuindo).
 
-Matematicamente, a derivada de uma função f(x) em um ponto x é definida como:
+Matematicamente, a derivada de uma função em um ponto é definida como:
 
-$$f'(x) = \frac{df}{dx} = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
+```
+f'(x) = df/dx = lim[h→0] (f(x+h) - f(x))/h
+```
 
-**Intuição Visual**: Imagine uma função f(x) plotada em um gráfico. A derivada em um ponto específico é a inclinação da linha tangente à curva nesse ponto.
+**Intuição Visual**: Imagine uma função plotada em um gráfico. A derivada em um ponto específico é a inclinação da linha tangente à curva nesse ponto.
 - Se a derivada é positiva, a função está subindo (aumentando).
 - Se a derivada é negativa, a função está descendo (diminuindo).
 - Se a derivada é zero, a função está em um ponto de máximo, mínimo ou sela (plano).
 
 - **Gradiente**: O gradiente é a generalização da derivada para funções com múltiplas variáveis de entrada (funções multivariadas). O gradiente é um vetor que contém as derivadas parciais da função em relação a cada uma de suas variáveis de entrada.
 
-Para uma função f(x₁,x₂,...,xₙ), o gradiente é denotado por ∇f e é definido como:
+Para uma função com múltiplas variáveis, o gradiente é denotado por ∇f e é definido como:
 
-$$\nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, ..., \frac{\partial f}{\partial x_n}\right)$$
+```
+∇f = (∂f/∂x₁, ∂f/∂x₂, ..., ∂f/∂xₙ)
+```
 
 **Intuição Visual**: Imagine uma paisagem montanhosa (uma função com múltiplas entradas e uma saída, como uma função de custo). O gradiente em um ponto específico dessa paisagem aponta na direção da maior inclinação, ou seja, a direção de maior crescimento da função. Se você estivesse em um ponto da montanha e quisesse subir o mais rápido possível, o gradiente indicaria a direção a seguir.
 
@@ -29,14 +38,17 @@ No Deep Learning, o objetivo é minimizar uma função de custo (ou perda), que 
 
 A **Regra da Cadeia** é uma ferramenta matemática fundamental para calcular derivadas de funções compostas. Em redes neurais, onde temos múltiplas camadas de transformações compostas (a saída de uma camada é a entrada da próxima), a regra da cadeia é essencial para o algoritmo de Backpropagation.
 
-- **Conceito Básico**: Se temos uma função y=f(u) e u=g(x), então a derivada de y em relação a x é dada por:
+- **Conceito Básico**: Se temos funções compostas, então a derivada é dada por:
 
-$$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$$
+```
+dy/dx = (dy/du) × (du/dx)
+```
 
 - **Generalização para Múltiplas Variáveis**: Se uma função z depende de variáveis u e v, e u e v por sua vez dependem de x, a derivada parcial de z em relação a x é:
 
-$$\frac{\partial z}{\partial x} = \frac{\partial z}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial z}{\partial v}\frac{\partial v}{\partial x}$$
-
+```
+∂z/∂x = (∂z/∂u)(∂u/∂x) + (∂z/∂v)(∂v/∂x)
+```
 
 ## Otimização e gradiente descendente
 
@@ -50,13 +62,15 @@ O processo do Gradiente Descendente segue uma sequência iterativa:
 
 3. **Atualização dos Parâmetros**: Os parâmetros do modelo são ajustados em uma pequena quantidade na direção oposta ao gradiente, ou seja, descendo a "inclinação" da função de custo. A fórmula de atualização é tipicamente:
 
-$$\theta_{new} = \theta_{old} - \eta \nabla J(\theta_{old})$$
+```
+θ_novo = θ_antigo - η × ∇J(θ_antigo)
+```
 
 Onde:
-- θₙₑw são os novos valores dos parâmetros (pesos e vieses).
-- θₒₗd são os valores atuais dos parâmetros.
+- θ_novo são os novos valores dos parâmetros (pesos e vieses).
+- θ_antigo são os valores atuais dos parâmetros.
 - η (eta) é a taxa de aprendizagem (learning rate).
-- ∇J(θₒₗd) é o gradiente da função de custo J em relação aos parâmetros θₒₗd.
+- ∇J(θ_antigo) é o gradiente da função de custo em relação aos parâmetros.
 
 4. **Iteração**: Os passos são repetidos em ciclos contínuos até que a função de custo não possa ser reduzida significativamente, indicando que o modelo alcançou a convergência.
 

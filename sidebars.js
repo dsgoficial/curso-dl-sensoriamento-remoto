@@ -24,6 +24,9 @@ const sidebars = {
           label: 'Módulo 2: Redes Neurais (4h)',
           items: [
             'modulos/modulo2/visao_geral',
+            'modulos/modulo2/pytorch_vs_numpy',
+            'modulos/modulo2/calculo_dl',
+            'modulos/modulo2/perceptron',
             // 'modulos/modulo2/treinamento-pytorch',
           ],
         },
