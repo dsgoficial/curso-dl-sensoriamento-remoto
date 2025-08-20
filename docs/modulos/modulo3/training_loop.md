@@ -5,6 +5,8 @@ description: "Fundamentos de Redes Neurais e PyTorch"
 tags: [treinamento, loss, forward pass, backward pass, backpropagation, optimizer]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16AOqOIHJng2-atZz86RZyZU0wezIJJHk?usp=sharing)
+
 
 # **Anatomia do Training Loop**
 

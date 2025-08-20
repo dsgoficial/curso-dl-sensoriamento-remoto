@@ -21,7 +21,7 @@ Anatomia completa do loop de treinamento e integração de todos os componentes 
 - **Dataset e DataLoader para MNIST:** Carregamento eficiente de dados com torchvision
 - **Modo train vs eval:** Quando e por que alternar entre modos de treinamento e avaliação
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1xyz)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/16AOqOIHJng2-atZz86RZyZU0wezIJJHk?usp=sharing)
 
 ---
 
