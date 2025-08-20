@@ -1,0 +1,16 @@
+{
+    "label": "Módulo 2: Fundamentos de Redes Neurais e PyTorch (4h)",
+    "position": 2,
+    "link": {
+      "type": "generated-index",
+      "title": "Módulo 2: Fundamentos de Redes Neurais e PyTorch",
+      "description": "Fundamentos de redes neurais e pytorch",
+      "keywords": ["treinamento", "mlp", "perceptron", "backpropagation", "forward pass", "gradiente descendente"]
+    },
+    "collapsed": false,
+    "customProps": {
+      "duration": "4h",
+      "difficulty": "Intermediário",
+      "type": "EAD"
+    }
+  }

@@ -1,0 +1,16 @@
+{
+    "label": "Módulo 3: Treinamento de Redes Neurais (4h)",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "title": "Módulo 3: Treinamento de Redes Neurais",
+      "description": "Técnicas avançadas de otimização, regularização e monitoramento para treinamento eficiente e robusto de redes neurais.",
+      "keywords": ["treinamento", "otimização", "regularização", "monitoramento", "avaliação", "losses", "schedulers", "checkpointing"]
+    },
+    "collapsed": false,
+    "customProps": {
+      "duration": "4h",
+      "difficulty": "Intermediário",
+      "type": "EAD"
+    }
+  }
