@@ -35,19 +35,27 @@ Introdução ao curso, evolução da IA e fundamentos de processamento de imagen
 #### Módulo 2: Redes Neurais - Teoria e Práticas
 **Duração:** 4h
 
-Fundamentos de redes neurais e primeiras implementações práticas.
+Este módulo estabelece os fundamentos teóricos e práticos das redes neurais, introduzindo o PyTorch como framework principal. Os alunos aprenderão desde os conceitos matemáticos básicos (gradientes e otimização) até a implementação de um Multi-Layer Perceptron (MLP).
 
 - [Visão Geral do Módulo 2](./modulos/modulo2/visao_geral)
-- [2.1 Fundamentos de Redes Neurais (2h)](./modulos/modulo2/fundamentos/)
-- [2.2 Teoria do Treinamento e PyTorch (2h)](./modulos/modulo2/treinamento-pytorch/)
+- [2.1 PyTorch Fundamentals](./modulos/modulo2/pytorch_vs_numpy)
+- [2.2 Cálculo para Deep Learning](./modulos/modulo2/calculo_dl)
+- [2.3 O Perceptron e Redes Neurais](./modulos/modulo2/perceptron)
 
 #### Módulo 3: Treinamento de Redes Neurais
 **Duração:** 4h
 
-Training loops completos e fenômenos do treinamento.
+Este módulo aprofunda as técnicas de treinamento eficiente e robusto, cobrindo a estruturação de dados, otimização de performance do DataLoader e a importância de métricas e regularização. Os alunos dominarão o ciclo completo de treinamento, incluindo funções de perda avançadas, schedulers de learning rate, e estratégias de Early Stopping e Checkpointing.
 
-- [3.1 Training Loop Completo (2h)](./modulos/modulo3/training-loop/)
-- [3.2 Fenômenos do Treinamento (2h)](./modulos/modulo3/fenomenos-treinamento/)
+- [Visão Geral do Módulo 3](./modulos/modulo3/visao_geral)
+- [3.1 Training Loop Completo](./modulos/modulo3/training_loop)
+- [3.2 Dataset e DataLoader Avançado](./modulos/modulo3/dataloader)
+- [3.3 Funções de Perda (Losses)](./modulos/modulo3/losses)
+- [3.4 Learning Rate Schedulers](./modulos/modulo3/learning_rate_schedulers)
+- [3.5 Checkpointing](./modulos/modulo3/checkpointing)
+- [3.6 Avaliação e Diagnóstico do Treinamento](./modulos/modulo3/avaliacao_treinamento)
+- [3.7 Técnicas de Regularização](./modulos/modulo3/regularizers)
+- [3.8 Exercício Prático Integrado](./modulos/modulo3/treinamento_completo)
 
 #### Módulo 4: Introdução às CNNs
 **Duração:** 4h
