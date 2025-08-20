@@ -179,10 +179,10 @@ Ao concluir este módulo, você deve estar preparado para:
 - ✅ Implementar checkpointing e sistemas de monitoramento
 - ✅ Diagnosticar problemas de treinamento (overfitting/underfitting)
 - ✅ Aplicar técnicas de regularização adequadas
-- ✅ Integrar todas as técnicas em um sistema completo de produção
+- ✅ Integrar todas as técnicas em um exemplo de treinamento
 
 :::tip Próximo Passo
-O Módulo 4 aborda arquiteturas avançadas de redes neurais, incluindo CNNs, RNNs e Transformers.
+O Módulo 4 aborda as Redes Neurais Convolucionais (Convolutional Neural Networks - CNN).
 :::
 
 ## FAQ do Módulo
