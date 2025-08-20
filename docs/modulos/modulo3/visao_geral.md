@@ -105,7 +105,7 @@ Salvamento e restauração de modelos para resiliência e reprodutibilidade.
   - Otimizações para produção
 - **Prática no Colab:** Implementação de sistema de checkpointing
 
-**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jkl)
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dHnolt8Kf16N5Ye2QxSGZsNKbAvj1owp?usp=sharing)
 
 **Intervalo:** 10min
 

@@ -5,6 +5,8 @@ description: "Salvar e Restaurar Pesos (Checkpointing)"
 tags: [state_dict, torch.save(), checkpoint]
 ---
 
+**Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1dHnolt8Kf16N5Ye2QxSGZsNKbAvj1owp?usp=sharing)
+
 # 1. Salvar e Restaurar Pesos (Checkpointing)
 
 Checkpointing é o processo de salvar o estado de um modelo durante o treinamento. É uma prática fundamental para garantir a resiliência e replicabilidade do processo de treinamento, permitindo retomar o treinamento em caso de interrupções inesperadas ou planejar sessões de treinamento em múltiplas etapas. Além disso, permite salvar versões do modelo em pontos chave para posterior avaliação e seleção do melhor desempenho.
@@ -53,6 +55,23 @@ checkpoint = {
 
 torch.save(checkpoint, checkpoint_path)
 print(f"Checkpoint salvo em: {checkpoint_path}")
+```
+
+## Como salvar no Google Drive:
+
+```python
+from google.colab import drive
+
+# Montar o Google Drive
+drive.mount('/content/drive')
+
+# Definir o caminho no Google Drive onde o checkpoint será salvo
+# Certifique-se de que o diretório 'My Drive/checkpoints' exista no seu Google Drive
+drive_checkpoint_path = '/content/drive/My Drive/checkpoints/checkpoint_completo_drive.pth.tar'
+
+# Salvar o checkpoint no Google Drive
+torch.save(checkpoint, drive_checkpoint_path)
+print(f"Checkpoint salvo no Google Drive em: {drive_checkpoint_path}")
 ```
 
 ## Como Restaurar Pesos para Retomar Treinamento:
