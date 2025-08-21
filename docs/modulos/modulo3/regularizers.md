@@ -318,75 +318,127 @@ O processo de Gradient Accumulation segue os seguintes passos:
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader
+from torchvision import datasets, transforms
 import copy
 
 # Configuração do dispositivo
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Usando dispositivo: {device}")
 
-# Definir um modelo simples (ex: regressão linear)
-class SimpleLinearModel(nn.Module):
-    def __init__(self):
-        super(SimpleLinearModel, self).__init__()
-        self.weight = nn.Parameter(torch.zeros((1, 1)))  # Inicializar peso com 0
-    
-    def forward(self, inputs):
-        return inputs @ self.weight
+# Definir um modelo MLP
+class SimpleMLP(nn.Module):
+    def __init__(self, input_size, hidden_size, num_classes):
+        super(SimpleMLP, self).__init__()
+        self.fc1 = nn.Linear(input_size, hidden_size)
+        self.relu = nn.ReLU()
+        self.fc2 = nn.Linear(hidden_size, num_classes)
 
-# Gerar dados sintéticos: y = 2x
-x_data = torch.tensor([1., , , , 5., 6., 7., 8.]).view(-1, 1)
-y_data = torch.tensor([2., , 6., 8., 10., 12., 14., 16.]).view(-1, 1)
-dataset = TensorDataset(x_data, y_data)
+    def forward(self, x):
+        out = self.fc1(x)
+        out = self.relu(out)
+        out = self.fc2(out)
+        return out
 
-# Definir passos de acumulação e tamanho do mini-batch
-accumulation_steps = 4
-# O tamanho do batch real que o DataLoader fornecerá
-per_device_batch_size = len(x_data) // accumulation_steps  # 8 // 4 = 2
-dataloader = DataLoader(dataset, batch_size=per_device_batch_size, shuffle=False)
+# Carregar e pré-processar o dataset MNIST
+input_size = 784  # 28*28
+hidden_size = 128
+num_classes = 10
+accumulation_steps = 16 # Aumentar os passos de acumulação
+per_device_batch_size = 64 # Tamanho do mini-batch que cabe na memória
+effective_batch_size = per_device_batch_size * accumulation_steps # Tamanho do batch efetivo
+
+print(f"Tamanho do mini-batch por iteração: {per_device_batch_size}")
+print(f"Tamanho do batch efetivo: {effective_batch_size}")
+
+transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize((0.1307,), (0.3081,))
+])
+
+train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
+train_loader = DataLoader(dataset=train_dataset, batch_size=per_device_batch_size, shuffle=True)
 
 # Inicializar modelo, otimizador e função de perda
-model = SimpleLinearModel().to(device)
-criterion = nn.MSELoss()
-optimizer = optim.SGD(model.parameters(), lr=0.02)
-
-print(f"Peso inicial do modelo: {model.weight.mean().item():.5f}")
+model = SimpleMLP(input_size, hidden_size, num_classes).to(device)
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # 5. Loop de treinamento com Gradient Accumulation
-print("\nIniciando treinamento com Gradient Accumulation:")
-for epoch in range(1):  # Apenas 1 época para demonstrar o ciclo
-    for i, (inputs, labels) in enumerate(dataloader):
-        inputs, labels = inputs.to(device), labels.to(device)
-        
+num_epochs = 2 # Reduzir o número de épocas para demonstração
+print("\nIniciando treinamento com Gradient Accumulation no MNIST:")
+
+for epoch in range(num_epochs):
+    model.train()
+    running_loss = 0.0
+    for i, (images, labels) in enumerate(train_loader):
+        images = images.reshape(-1, input_size).to(device)
+        labels = labels.to(device)
+
         # Forward pass
-        outputs = model(inputs)
+        outputs = model(images)
         loss = criterion(outputs, labels)
-        
+
         # Normalizar a perda pelos passos de acumulação
         loss = loss / accumulation_steps
-        
+
         # Backward pass - acumula gradientes
         loss.backward()
-        
+
         # Realizar o passo do otimizador e zerar gradientes apenas após 'accumulation_steps'
         if (i + 1) % accumulation_steps == 0:
             optimizer.step()
             optimizer.zero_grad()
-            print(f"  Batch {i+1}/{len(dataloader)}: Pesos atualizados. Perda: {loss.item()*accumulation_steps:.4f}")  # Multiplicar perda de volta para valor real
-    
-    # Após o loop, se houver gradientes acumulados restantes (último batch não completou um ciclo completo)
-    # performa um passo final e zera os gradientes.
+            # print(f"  Época {epoch+1}, Batch {i+1}/{len(train_loader)}: Pesos atualizados. Perda: {loss.item()*accumulation_steps:.4f}")
+            running_loss += loss.item() * accumulation_steps # Accumulate original loss
+
+    # After the loop, if there are remaining accumulated gradients (last batch didn't complete a full cycle)
+    # perform a final step and zero the gradients.
     if (i + 1) % accumulation_steps != 0:
         optimizer.step()
         optimizer.zero_grad()
-        print(f"  Passo final de otimização para gradientes restantes.")
+        # print(f"  Época {epoch+1}: Passo final de otimização para gradientes restantes.")
+        running_loss += loss.item() * ((i + 1) % accumulation_steps) # Add remaining loss
 
-print(f"\nPeso final do modelo com acumulação: {model.weight.mean().item():.5f}")
+    print(f"Época [{epoch+1}/{num_epochs}], Perda: {running_loss / len(train_loader):.4f}")
 
-# Exercício Prático: Comparar Gradient Accumulation com treinamento normal
-# Crie um modelo e um dataset.
-# Treine o modelo com um batch_size grande (se sua GPU permitir) ou um batch_size pequeno sem acumulação.
-# Treine o mesmo modelo com Gradient Accumulation, usando um batch_size pequeno por iteração,
-#   mas um effective_batch_size igual ao batch_size grande do passo 
-# Compare o consumo de memória (se possível) e a convergência das perdas.
-# 5. Observe que os resultados finais (pesos do modelo) devem ser muito semelhantes, validando a simulação do batch size maior.
+
+print("\nTreinamento concluído.")
+
+# Avaliar acurácia no dataset de treinamento
+model.eval()  # Modo de avaliação (desativa dropout, usa médias/variâncias acumuladas para BN)
+correct_train = 0
+total_train = 0
+with torch.no_grad():  # Desativa o cálculo de gradientes
+    for images, labels in train_loader:
+        images = images.reshape(-1, input_size).to(device)
+        labels = labels.to(device)
+        outputs = model(images)
+        _, predicted = torch.max(outputs.data, 1)
+        total_train += labels.size(0)
+        correct_train += (predicted == labels).sum().item()
+
+train_accuracy = 100 * correct_train / total_train
+print(f'Acurácia no dataset de treinamento: {train_accuracy:.2f}%')
+
+# Carregar e pré-processar o dataset de teste MNIST
+test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=transform)
+test_loader = DataLoader(dataset=test_dataset, batch_size=per_device_batch_size, shuffle=False) # Shuffle=False para consistência na avaliação
+
+# Avaliar acurácia no dataset de teste
+model.eval()  # Modo de avaliação
+correct_test = 0
+total_test = 0
+with torch.no_grad():  # Desativa o cálculo de gradientes
+    for images, labels in test_loader:
+        images = images.reshape(-1, input_size).to(device)
+        labels = labels.to(device)
+        outputs = model(images)
+        _, predicted = torch.max(outputs.data, 1)
+        total_test += labels.size(0)
+        correct_test += (predicted == labels).sum().item()
+
+test_accuracy = 100 * correct_test / total_test
+print(f'Acurácia no dataset de teste: {test_accuracy:.2f}%')
+
 ```
