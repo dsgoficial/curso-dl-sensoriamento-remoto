@@ -44,14 +44,20 @@ const sidebars = {
             'modulos/modulo3/treinamento_completo',
           ],
         },
-        // {
-        //   type: 'category',
-        //   label: 'Módulo 4: CNNs (4h)',
-        //   items: [
-        //     'modulos/modulo4/convolucao-classica-cnns',
-        //     'modulos/modulo4/lenet-mnist',
-        //   ],
-        // },
+        {
+          type: 'category',
+          label: 'Módulo 4: CNNs (4h)',
+          items: [
+            'modulos/modulo4/visao_geral',
+            'modulos/modulo4/cnn_limitacoes_mlp',
+            'modulos/modulo4/cnn_architecture',
+            'modulos/modulo4/convolution_details',
+            'modulos/modulo4/lenet_mnist',
+            'modulos/modulo4/cnn_vs_mlp',
+            'modulos/modulo4/cnn_visualization',
+            'modulos/modulo4/cnn_embeddings',
+          ],
+        },
       ],
     },
     // {
