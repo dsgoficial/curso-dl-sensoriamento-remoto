@@ -67,23 +67,23 @@ Transição de MLPs para CNNs e primeira implementação prática.
 
 ### Segunda Semana - Presencial (40 horas)
 
-#### Dia 1: Consolidação e Ferramentas
+#### Dia 1: CNNs Avançadas
 **8 horas presenciais**
 
-- **Manhã:** Revisão dos conceitos, Transfer Learning (4h)
-- **Tarde:** Implementação da VGG, ResNet
+- **Manhã:** Revisão dos conceitos, implementação das arquiteturas: AlexNet, Inception e VGG;
+- **Tarde:** Implementação da ResNet e Transfer Learning
 
 #### Dia 2: CNNs Avançadas
 **8 horas presenciais**
 
-- **Tarde:** Implementação da VGG, ResNet
-- **Manhã:** Treinamento usando VGG, ResNet e Transfer Learning (4h) no RESIC-45 (4h)
+- **Tarde:** Data Augmentation e Treinamento de uma ResNet no RESIC-45
+- **Manhã:** Treinamento usando VGG, ResNet, Data Augmentation  e Transfer Learning (4h) no RESIC-45 (4h)
 
 #### Dia 3: Segmentação Semântica
 **8 horas presenciais**
 
-- **Manhã:** U-Net e Dataset ISPRS Potsdam (4h)
-- **Tarde:** Data Augmentation e PyTorch Lightning (4h)
+- **Manhã:** FCN, SegNet, U-Net e Dataset ISPRS Potsdam (4h)
+- **Tarde:** PyTorch Lightning (4h)
 
 #### Dia 4: Preparação de Dados Profissional
 **8 horas presenciais**

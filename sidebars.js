@@ -60,17 +60,24 @@ const sidebars = {
         },
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Segunda Semana - Presencial (40h)',
-    //   items: [
-    //     'presencial/dia1',
-    //     'presencial/dia2',
-    //     'presencial/dia3',
-    //     'presencial/dia4',
-    //     'presencial/dia5',
-    //   ],
-    // },
+    {
+      type: 'category',
+      label: 'Segunda Semana - Presencial (40h)',
+      items: [
+        {
+          type: 'category',
+          label: 'Módulo 5: Arquiteturas CNN Avançadas (8h)',
+          items: [
+            'modulos/modulo5/visao_geral',
+            'modulos/modulo5/alexnet',
+            'modulos/modulo5/inception',
+            'modulos/modulo5/vgg_family',
+            'modulos/modulo5/resnet',
+            'modulos/modulo5/transfer_learning',
+          ],
+        },
+      ],
+    },
     // {
     //   type: 'category',
     //   label: 'Recursos',
