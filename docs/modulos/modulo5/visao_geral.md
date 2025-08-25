@@ -11,6 +11,11 @@ Este módulo explora arquiteturas avançadas de Redes Neurais Convolucionais (CN
 
 # Estrutura do Módulo
 
+**Template Exercício de Revisão** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17r1wszKcr7dXSGts6KrxTNcb5tGrxvFP?usp=sharing)
+
+**Solução do Exercício de Revisão no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tXaLDV0L8q07rEpkdTmwRhQSRxLMx91G?usp=sharing)
+
+
 ## [5.1 AlexNet: O Marco Inicial das CNNs Modernas](./alexnet)
 
 **Template do Exercício no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1LtZZjLQWm7vnf33s1okd0WmvxAvTaLe5?usp=sharing)
