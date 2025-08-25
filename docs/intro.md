@@ -67,32 +67,38 @@ Transição de MLPs para CNNs e primeira implementação prática.
 
 ### Segunda Semana - Presencial (40 horas)
 
-#### Dia 1: CNNs Avançadas
-**8 horas presenciais**
+#### Dia 1: Arquiteturas CNN Avançadas
+**Duração:** 8h
 
-- **Manhã:** Revisão dos conceitos, implementação das arquiteturas: AlexNet, Inception e VGG;
-- **Tarde:** Implementação da ResNet e Transfer Learning
+Este dia é dedicado ao estudo e implementação de arquiteturas avançadas de Redes Neurais Convolucionais (CNNs), explorando desde a AlexNet até a ResNet, além de técnicas de Transfer Learning.
+
+- [Visão Geral do Módulo 5](./modulos/modulo5/visao_geral)
+- [5.1 AlexNet: O Marco Inicial das CNNs Modernas](./modulos/modulo5/alexnet)
+- [5.2 Inception: Eficiência e Multi-Escala](./modulos/modulo5/inception)
+- [5.3 VGG: Simplicidade e Profundidade](./modulos/modulo5/vgg_family)
+- [5.4 ResNet: Redes Residuais e Profundidade Extrema](./modulos/modulo5/resnet)
+- [5.5 Transfer Learning: Reutilizando Modelos Pré-Treinados](./modulos/modulo5/transfer_learning)
 
 #### Dia 2: CNNs Avançadas
-**8 horas presenciais**
+**Duração:** 8h
 
 - **Tarde:** Data Augmentation e Treinamento de uma ResNet no RESIC-45
 - **Manhã:** Treinamento usando VGG, ResNet, Data Augmentation  e Transfer Learning (4h) no RESIC-45 (4h)
 
 #### Dia 3: Segmentação Semântica
-**8 horas presenciais**
+**Duração:** 8h
 
 - **Manhã:** FCN, SegNet, U-Net e Dataset ISPRS Potsdam (4h)
 - **Tarde:** PyTorch Lightning (4h)
 
 #### Dia 4: Preparação de Dados Profissional
-**8 horas presenciais**
+**Duração:** 8h
 
 - **Manhã:** Ferramentas Geoespaciais - QGIS, Rasterio, GeoPandas, Processamento em Paralelo (ProcessPool e ThreadPool) (4h)
 - **Tarde:** Criação de Dataset Custom com dados DSG, Balanceamento e Treinamento (4h)
 
 #### Dia 5: Estado da Arte e Projeto Final
-**8 horas presenciais**
+**Duração:** 8h
 
 - **Manhã:** Segmentation Models PyTorch e DeepLab v3+ (4h)
 - **Tarde:** Treinamento com dados customizados (4h)
