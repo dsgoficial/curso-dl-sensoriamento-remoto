@@ -26,7 +26,7 @@ Este curso oferece uma formação completa em Deep Learning com foco específico
 **Duração:** 4h
 
 Introdução ao curso, evolução da IA e fundamentos de processamento de imagens.
-- [Visão Geral do Módulo 1](./modulos/modulo1)
+- [Visão Geral do Módulo 1](./modulos/modulo1/index)
 - [1.1 Introdução e Evolução da IA (40min)](./modulos/modulo1/introducao)
 - [1.2 Setup do Ambiente (10min)](./modulos/modulo1/setup)
 - [1.3 Revisão Matemática (50min)](./modulos/modulo1/matematica)
@@ -70,14 +70,14 @@ Transição de MLPs para CNNs e primeira implementação prática.
 #### Dia 1: Consolidação e Ferramentas
 **8 horas presenciais**
 
-- **Manhã:** Síntese e Técnicas de Regularização (4h)
-- **Tarde:** Ferramentas Geoespaciais - QGIS, Rasterio, GeoPandas (4h)
+- **Manhã:** Revisão dos conceitos, Transfer Learning (4h)
+- **Tarde:** Implementação da VGG, ResNet
 
 #### Dia 2: CNNs Avançadas
 **8 horas presenciais**
 
-- **Manhã:** VGG, ResNet, Transfer Learning (4h)
-- **Tarde:** Classificação de Cenas RESIC-45 (4h)
+- **Tarde:** Implementação da VGG, ResNet
+- **Manhã:** Treinamento usando VGG, ResNet e Transfer Learning (4h) no RESIC-45 (4h)
 
 #### Dia 3: Segmentação Semântica
 **8 horas presenciais**
@@ -88,14 +88,14 @@ Transição de MLPs para CNNs e primeira implementação prática.
 #### Dia 4: Preparação de Dados Profissional
 **8 horas presenciais**
 
-- **Manhã:** Dataset Custom com dados DSG (4h)
-- **Tarde:** Balanceamento e Treinamento (4h)
+- **Manhã:** Ferramentas Geoespaciais - QGIS, Rasterio, GeoPandas, Processamento em Paralelo (ProcessPool e ThreadPool) (4h)
+- **Tarde:** Criação de Dataset Custom com dados DSG, Balanceamento e Treinamento (4h)
 
 #### Dia 5: Estado da Arte e Projeto Final
 **8 horas presenciais**
 
 - **Manhã:** Segmentation Models PyTorch e DeepLab v3+ (4h)
-- **Tarde:** Projeto Integrador e Apresentações (4h)
+- **Tarde:** Treinamento com dados customizados (4h)
 
 ## Datasets Utilizados
 
@@ -125,6 +125,16 @@ Ao concluir este curso, você será capaz de:
 O conteúdo EAD prepara a base teórica, enquanto as atividades presenciais focam em aplicações práticas e projetos reais.
 :::
 
+## Materiais de Apoio
+
+Aqui estão alguns materiais adicionais para complementar seus estudos:
+
+- **[Deep Learning Book](https://www.deeplearningbook.org)**: Um dos livros mais completos sobre Deep Learning.
+- **[Dive into Deep Learning](https://d2l.ai)**: Livro interativo com exemplos práticos.
+- **[Neural Networks by 3 Blue One Brown](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi&pp=0gcJCWUEOCosWNin)**: Série de vídeos explicando redes neurais de forma visual e intuitiva.
+- **[Tutoriais de PyTorch](https://www.youtube.com/watch?v=2S1dgHpqCdk&list=PLhhyoLH6IjfxeoooqP9rhU3HJIAVAJ3Vz)**: Playlist oficial para aprender PyTorch.
+- **[Tutoriais de PyTorch Lightning](https://www.youtube.com/watch?v=XbIN9LaQycQ&list=PLhhyoLH6IjfyL740PTuXef4TstxAK6nGP)**: Playlist oficial para aprender PyTorch Lightning.
+
 ## Próximos Passos
 
-- [🚀 Começar Módulo 1](./modulos/modulo1/)
+- [🚀 Começar Módulo 1](./modulos/modulo1/index)
