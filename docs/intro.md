@@ -77,13 +77,13 @@ Este dia é dedicado ao estudo e implementação de arquiteturas avançadas de R
 - [5.2 Inception: Eficiência e Multi-Escala](./modulos/modulo5/inception)
 - [5.3 VGG: Simplicidade e Profundidade](./modulos/modulo5/vgg_family)
 - [5.4 ResNet: Redes Residuais e Profundidade Extrema](./modulos/modulo5/resnet)
-- [5.5 Transfer Learning: Reutilizando Modelos Pré-Treinados](./modulos/modulo5/transfer_learning)
 
 #### Dia 2: CNNs Avançadas
 **Duração:** 8h
 
-- **Tarde:** Data Augmentation e Treinamento de uma ResNet no RESIC-45
-- **Manhã:** Treinamento usando VGG, ResNet, Data Augmentation  e Transfer Learning (4h) no RESIC-45 (4h)
+- [6.1 Transfer Learning: Reutilizando Modelos Pré-Treinados](./modulos/modulo6/transfer_learning)
+- [6.2 Data Augmentation](./modulos/modulo6/data_augmentation_albumentations)
+- [6.3 Exercícios](./modulos/modulo6/exercicios)
 
 #### Dia 3: Segmentação Semântica
 **Duração:** 8h

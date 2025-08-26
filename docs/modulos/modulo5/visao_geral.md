@@ -15,6 +15,7 @@ Este módulo explora arquiteturas avançadas de Redes Neurais Convolucionais (CN
 
 **Solução do Exercício de Revisão no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1tXaLDV0L8q07rEpkdTmwRhQSRxLMx91G?usp=sharing)
 
+![Evolução das CNNs. Extraído de https://subscription.packtpub.com/book/business-and-other/9781801074308/2/ch02lvl1sec09/evolution-of-cnn-architectures](/img/evolucao_redes.png)
 
 ## [5.1 AlexNet: O Marco Inicial das CNNs Modernas](./alexnet)
 
@@ -126,3 +127,4 @@ Os próximos módulos abordarão técnicas avançadas de segmentação semântic
 ## Navegação
 
 **Anterior:** [Módulo 4: Introdução às CNNs](../modulo4/)
+**Próximo:** [Módulo 5: Arquiteturas CNN Avançadas](../modulo5/)  

@@ -1,0 +1,85 @@
+---
+sidebar_position: 1
+title: "Visão Geral do Módulo 7"
+description: "Segmentação Semântica com FCN, SegNet e U-Net"
+tags: [segmentação, fcn, segnet, unet, deep-learning, pytorch]
+---
+
+:::info Objetivo
+Este módulo explora arquiteturas avançadas para segmentação semântica, incluindo Fully Convolutional Networks (FCN), SegNet e U-Net. Os alunos aprenderão a implementar essas arquiteturas em PyTorch e aplicá-las a tarefas de segmentação em sensoriamento remoto.
+:::
+
+# Estrutura do Módulo
+
+## [7.1 Fully Convolutional Networks (FCN)](./fcn)
+
+**Tópicos Principais:**
+- **Introdução à Segmentação Semântica:** Diferenças entre classificação e segmentação
+- **Arquitetura FCN:** Encoder-decoder e convoluções transpostas
+- **Inovações:** Skip connections e predições densas
+- **Implementação Prática:** FCN com PyTorch para segmentação de imagens
+- **Datasets:** Uso de PASCAL VOC e Cityscapes
+
+---
+
+## [7.2 SegNet: Eficiência e Precisão](./segnet)
+
+**Tópicos Principais:**
+- **Arquitetura Encoder-Decoder:** Uso de max-unpooling para upsampling
+- **Inovações:** Armazenamento de índices de pooling para eficiência
+- **Comparação com FCN:** Trade-offs entre memória e precisão
+- **Implementação Prática:** Construção da SegNet em PyTorch
+- **Aplicações:** Segmentação urbana e sensoriamento remoto
+
+---
+
+## [7.3 U-Net: Precisão em Segmentação Médica e Sensoriamento Remoto](./unet)
+
+**Tópicos Principais:**
+- **Arquitetura em Forma de U:** Encoder-decoder com conexões de salto
+- **Inovações:** Concatenação de características para precisão em contornos
+- **Aplicações:** Segmentação médica e mapeamento geoespacial
+- **Implementação Prática:** U-Net em PyTorch com datasets personalizados
+- **Técnicas Avançadas:** Data augmentation e Dice Loss
+
+---
+
+## Preparação para o Projeto Final
+
+Ao concluir este módulo, você estará preparado para:
+
+- ✅ Implementar FCN, SegNet e U-Net em PyTorch
+- ✅ Comparar arquiteturas em termos de eficiência e precisão
+- ✅ Aplicar segmentação semântica a dados de sensoriamento remoto
+- ✅ Avaliar modelos com métricas como IoU e Dice Score
+- ✅ Integrar técnicas avançadas como data augmentation e transfer learning
+
+:::tip Próximo Passo
+O próximo módulo será dedicado à construção de dataset, onde você aplicará todo o conhecimento adquirido para resolver um problema real de segmentação semântica.
+:::
+
+## FAQ do Módulo
+
+<details>
+<summary><strong>O que é segmentação semântica?</strong></summary>
+<p>Segmentação semântica é a tarefa de classificar cada pixel de uma imagem em uma categoria específica, como "estrada", "prédio" ou "vegetação".</p>
+</details>
+
+<details>
+<summary><strong>Qual a principal inovação da FCN?</strong></summary>
+<p>A FCN introduziu o conceito de predições densas e skip connections, permitindo a segmentação semântica de ponta a ponta.</p>
+</details>
+
+<details>
+<summary><strong>O que torna a SegNet eficiente?</strong></summary>
+<p>A SegNet utiliza max-unpooling com índices de pooling armazenados, reduzindo o número de parâmetros e melhorando a eficiência de memória.</p>
+</details>
+
+<details>
+<summary><strong>Por que a U-Net é amplamente utilizada?</strong></summary>
+<p>A U-Net é conhecida por sua precisão em contornos e sua capacidade de segmentar objetos pequenos, graças às conexões de salto que combinam características de diferentes níveis.</p>
+</details>
+
+## Navegação
+
+**Anterior:** [Módulo 7: Arquiteturas de Segmentação Semântica](../modulo7/) 

@@ -73,20 +73,30 @@ const sidebars = {
             'modulos/modulo5/inception',
             'modulos/modulo5/vgg_family',
             'modulos/modulo5/resnet',
-            'modulos/modulo5/transfer_learning',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Módulo 6: Transfer Learning e Data Augmentation (8h)',
+          items: [
+            'modulos/modulo6/visao_geral',
+            'modulos/modulo6/transfer_learning',
+            'modulos/modulo6/data_augmentation_albumentations',
+            'modulos/modulo6/exercicios',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Módulo 7: Segmentação Semântica (8h)',
+          items: [
+            'modulos/modulo7/visao_geral',
+            'modulos/modulo7/fcn',
+            'modulos/modulo7/segnet',
+            'modulos/modulo7/unet',
           ],
         },
       ],
     },
-    // {
-    //   type: 'category',
-    //   label: 'Recursos',
-    //   items: [
-    //     'recursos/datasets',
-    //     'recursos/bibliografia',
-    //     'recursos/faq',
-    //   ],
-    // },
   ],
 };
 
