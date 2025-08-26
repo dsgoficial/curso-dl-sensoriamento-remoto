@@ -33,13 +33,11 @@ Este módulo aborda técnicas avançadas de segmentação semântica, data augme
 
 ---
 
-## [6.3 Exercícios Práticos de Segmentação Semântica](./exercicios)
+## [6.3 Exercícios Práticos Utilizando os Backbones Implementados](./exercicios)
 
 **Tópicos Principais:**
-- **Segmentação Semântica:** Implementação de modelos como U-Net e DeepLab v3+
 - **Datasets:** Uso de RESIC-45 e EuroSAT para classificação e segmentação
-- **Treinamento Completo:** Aplicação de data augmentation e transfer learning em pipelines reais
-- **Avaliação:** Métricas como IoU e F1-Score para segmentação
+- **Treinamento Completo:** Aplicação de data augmentation e transfer learning
 
 ---
 

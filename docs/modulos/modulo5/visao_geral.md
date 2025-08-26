@@ -70,18 +70,6 @@ Este módulo explora arquiteturas avançadas de Redes Neurais Convolucionais (CN
 
 ---
 
-## [5.5 Transfer Learning: Reutilizando Modelos Pré-Treinados](./transfer_learning)
-
-**Exercício no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_tMEwD-BhdNturtx3RgA6Z9wJXtYd9Bq?usp=sharing)
-
-**Tópicos Principais:**
-- **Conceito:** O que é Transfer Learning e por que é útil
-- **Estratégias:** Feature Extraction vs. Fine-Tuning
-- **Benefícios:** Redução de custos computacionais e eficiência de dados
-- **Aplicações Práticas:** Classificação de cenas com RESIC-45
-- **Implementação Prática:** Transfer Learning com PyTorch usando modelos pré-treinados
-
----
 
 ## Preparação para Módulos Avançados
 
