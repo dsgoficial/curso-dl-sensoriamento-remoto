@@ -7,7 +7,9 @@ tags: [transfer-learning, fine-tuning, feature-extraction, sensoriamento-remoto,
 
 # Transfer Learning e Fine-Tunning em Deep Learning para Sensoriamento Remoto
 
-**Exercício no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_tMEwD-BhdNturtx3RgA6Z9wJXtYd9Bq?usp=sharing)
+**Exercício 1 no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jvt3zXpJA89VJuSEvPE1CMahw5hbv_RN?usp=sharing)
+
+**Exercício 2 no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_tMEwD-BhdNturtx3RgA6Z9wJXtYd9Bq?usp=sharing)
 
 ## 1. Introdução ao Transfer Learning
 
