@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: "SegNet: Eficiência e Precisão"
+title: "SegNet"
 description: "Arquitetura SegNet para segmentação semântica com max-unpooling e eficiência de memória"
 tags: [segnet, segmentação, deep-learning, max-unpooling, pytorch]
 ---

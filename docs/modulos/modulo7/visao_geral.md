@@ -21,7 +21,7 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 
 ---
 
-## [7.2 SegNet: Eficiência e Precisão](./segnet)
+## [7.2 SegNet](./segnet)
 
 **Tópicos Principais:**
 - **Arquitetura Encoder-Decoder:** Uso de max-unpooling para upsampling
