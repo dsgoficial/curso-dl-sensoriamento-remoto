@@ -16,7 +16,7 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 **Tópicos Principais:**
 - **Introdução à Segmentação Semântica:** Diferenças entre classificação e segmentação
 - **Arquitetura FCN:** Encoder-decoder e convoluções transpostas
-- **Inovações:** Skip connections e predições densas
+- **Inovações:** Skip architecture por meio de somas
 - **Implementação Prática:** FCN com PyTorch para segmentação de imagens
 
 ---
@@ -35,7 +35,7 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 
 **Tópicos Principais:**
 - **Arquitetura em Forma de U:** Encoder-decoder com conexões de salto
-- **Inovações:** Concatenação de características para precisão em contornos
+- **Inovações:** Concatenação de características por meio de skip connections para precisão em contornos
 - **Aplicações:** Segmentação médica e mapeamento geoespacial
 - **Implementação Prática:** U-Net em PyTorch com datasets personalizados
 
