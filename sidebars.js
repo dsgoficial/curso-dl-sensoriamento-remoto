@@ -93,6 +93,7 @@ const sidebars = {
             'modulos/modulo7/fcn',
             'modulos/modulo7/segnet',
             'modulos/modulo7/unet',
+            'modulos/modulo7/segmentation_models_pytorch',
           ],
         },
       ],

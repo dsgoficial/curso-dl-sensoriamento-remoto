@@ -62,6 +62,7 @@ Este módulo aprofunda as técnicas de treinamento eficiente e robusto, cobrindo
 
 Transição de MLPs para CNNs e primeira implementação prática.
 
+- [Visão Geral do Módulo 4](./modulos/modulo4/visao_geral)
 - [4.1 Da Convolução Clássica às CNNs (2h)](./modulos/modulo4/convolucao-classica-cnns/)
 - [4.2 LeNet no MNIST (2h)](./modulos/modulo4/lenet-mnist/)
 
@@ -78,18 +79,21 @@ Este dia é dedicado ao estudo e implementação de arquiteturas avançadas de R
 - [5.3 VGG: Simplicidade e Profundidade](./modulos/modulo5/vgg_family)
 - [5.4 ResNet: Redes Residuais e Profundidade Extrema](./modulos/modulo5/resnet)
 
-#### Dia 2: CNNs Avançadas
+#### Dia 2: Transfer Learning e Data Augmentation
 **Duração:** 8h
 
 - [6.1 Transfer Learning: Reutilizando Modelos Pré-Treinados](./modulos/modulo6/transfer_learning)
-- [6.2 Data Augmentation](./modulos/modulo6/data_augmentation_albumentations)
-- [6.3 Exercícios](./modulos/modulo6/exercicios)
+- [6.2 Data Augmentation com Albumentations](./modulos/modulo6/data_augmentation_albumentations)
+- [6.3 Exercícios Práticos](./modulos/modulo6/exercicios)
 
 #### Dia 3: Segmentação Semântica
 **Duração:** 8h
 
-- **Manhã:** Conceitos e implementação da FCN, SegNet, U-Net e do Training Loop de Segmentação Semântica (4h)
-- **Tarde:** Treinamento de U-Net usando o Dataset ISPRS Potsdam (4h)
+- [Visão Geral do Módulo 7](./modulos/modulo7/visao_geral)
+- [7.1 Fully Convolutional Networks (FCN)](./modulos/modulo7/fcn)
+- [7.2 SegNet: Eficiência e Precisão](./modulos/modulo7/segnet)
+- [7.3 U-Net: Precisão em Segmentação Médica e Sensoriamento Remoto](./modulos/modulo7/unet)
+- [7.4 Segmentação Semântica Multiclasse com segmentation-models-pytorch](./modulos/modulo7/segmentation_models_pytorch)
 
 #### Dia 4: Preparação de Dados Profissional
 **Duração:** 8h

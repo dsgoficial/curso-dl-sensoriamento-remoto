@@ -51,13 +51,13 @@ H_out = (H_in - 1) × stride - 2 × padding + kernel_size
 
 Esta operação de upsampling é crucial para a FCN, pois é ela que permite que a rede retorne à resolução original da imagem, gerando um mapa de segmentação denso.
 
-### Skip Connections: A Chave para a Precisão de Contornos
+### Skip Architecture
 
 Um problema significativo na arquitetura FCN original, conhecida como FCN-32s, é que o upsampling direto da última camada da rede resulta em mapas de segmentação "borrados" e com contornos imprecisos. Isso ocorre porque as camadas profundas do encoder, embora ricas em informações semânticas, perderam a maior parte dos detalhes espaciais finos devido aos sucessivos max poolings.³
 
-Para resolver esse problema, a FCN introduziu o conceito de **"skip connections"** ou "camadas de salto".³ A ideia é fundir as previsões da última camada da rede (rica em informação global/semântica) com mapas de características de camadas mais rasas (ricas em informação local/espacial).³ Essa fusão de informações de diferentes níveis de abstração resulta em uma saída de segmentação significativamente mais precisa, especialmente em relação aos contornos dos objetos.
+Para resolver esse problema, a FCN introduziu o conceito de **"skip architecture"**³ A ideia é fundir as previsões da última camada da rede (rica em informação global/semântica) com mapas de características de camadas mais rasas (ricas em informação local/espacial) por meio de soma.³ Essa fusão de informações de diferentes níveis de abstração resulta em uma saída de segmentação significativamente mais precisa, especialmente em relação aos contornos dos objetos.
 
-A arquitetura original da FCN foi proposta em três variantes, cada uma demonstrando o refinamento progressivo alcançado com a adição de mais conexões de salto³:
+A arquitetura original da FCN foi proposta em três variantes, cada uma demonstrando o refinamento progressivo alcançado com a adição de mais conexões de soma na skip architecture³:
 
 - **FCN-32s**: A versão mais simples, que apenas realiza o upsampling da saída da última camada da rede para o tamanho original com um passo de 32 pixels. O resultado é grosseiro e sem detalhes finos.³
 
@@ -71,15 +71,6 @@ Essa progressão demonstra de forma clara a importância das "skip connections".
 
 O treinamento de uma FCN, assim como o de qualquer rede neural profunda, exige um conjunto de dados anotado e a escolha de uma função de perda apropriada que oriente o processo de aprendizado.
 
-### Datasets para Segmentação Semântica
-
-Dois dos datasets de benchmark mais importantes para a segmentação semântica são o PASCAL VOC e o Cityscapes.
-
-- **PASCAL VOC (Visual Object Classes)**: Este dataset é um benchmark amplamente utilizado para tarefas de detecção, classificação e segmentação. Ele contém anotações abrangentes, incluindo máscaras de segmentação para 20 categorias de objetos comuns, como "pessoa", "carro", "cachorro" e "cadeira".¹⁹ O dataset é dividido em conjuntos de treino, validação e teste, com as anotações do conjunto de teste não sendo publicamente disponíveis para garantir uma avaliação justa dos modelos.¹⁹
-
-- **Cityscapes**: Ideal para aplicações em veículos autônomos, o Cityscapes é um dataset de larga escala que contém anotações em nível de pixel de cenas urbanas de 50 cidades diferentes.²¹ Ele oferece anotações de alta qualidade para 5.000 imagens e anotações mais "grosseiras" para outras 20.000, cobrindo 40 classes diferentes, como "estrada", "prédio", "sinal de trânsito" e "pessoa".²¹
-
-A escolha do dataset é crucial, pois define o contexto e as classes que o modelo precisará aprender a segmentar.
 
 ### Funções de Perda e o Problema do Desequilíbrio
 

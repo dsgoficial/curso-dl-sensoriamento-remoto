@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 title: "Visão Geral do Módulo 7"
-description: "Segmentação Semântica com FCN, SegNet e U-Net"
-tags: [segmentação, fcn, segnet, unet, deep-learning, pytorch]
+description: "Segmentação Semântica com FCN, SegNet, U-Net e segmentation-models-pytorch"
+tags: [segmentação, fcn, segnet, unet, segmentation-models-pytorch, deep-learning, pytorch]
 ---
 
 :::info Objetivo
-Este módulo explora arquiteturas avançadas para segmentação semântica, incluindo Fully Convolutional Networks (FCN), SegNet e U-Net. Os alunos aprenderão a implementar essas arquiteturas em PyTorch e aplicá-las a tarefas de segmentação em sensoriamento remoto.
+Este módulo explora arquiteturas avançadas para segmentação semântica, incluindo Fully Convolutional Networks (FCN), SegNet, U-Net e a biblioteca segmentation-models-pytorch. Os alunos aprenderão a implementar essas arquiteturas em PyTorch e aplicá-las a tarefas de segmentação em sensoriamento remoto.
 :::
 
 # Estrutura do Módulo
@@ -18,7 +18,6 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 - **Arquitetura FCN:** Encoder-decoder e convoluções transpostas
 - **Inovações:** Skip connections e predições densas
 - **Implementação Prática:** FCN com PyTorch para segmentação de imagens
-- **Datasets:** Uso de PASCAL VOC e Cityscapes
 
 ---
 
@@ -29,7 +28,6 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 - **Inovações:** Armazenamento de índices de pooling para eficiência
 - **Comparação com FCN:** Trade-offs entre memória e precisão
 - **Implementação Prática:** Construção da SegNet em PyTorch
-- **Aplicações:** Segmentação urbana e sensoriamento remoto
 
 ---
 
@@ -40,7 +38,18 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 - **Inovações:** Concatenação de características para precisão em contornos
 - **Aplicações:** Segmentação médica e mapeamento geoespacial
 - **Implementação Prática:** U-Net em PyTorch com datasets personalizados
-- **Técnicas Avançadas:** Data augmentation e Dice Loss
+
+---
+
+## [7.4 Segmentação Semântica Multiclasse com segmentation-models-pytorch](./segmentation_models_pytorch)
+
+**Tópicos Principais:**
+- **Biblioteca segmentation-models-pytorch:** Introdução e vantagens
+- **Arquitetura U-Net com smp:** Uso de encoders pré-treinados e configuração do modelo
+- **Preparação de Dados:** Máscaras multiclasse e datasets customizados
+- **Funções de Perda:** CrossEntropyLoss, DiceLoss e perdas combinadas
+- **Inferência:** Conversão de logits em máscaras finais com softmax e argmax
+- **Implementação Prática:** Pipeline completo com treinamento e validação
 
 ---
 
@@ -48,7 +57,7 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 
 Ao concluir este módulo, você estará preparado para:
 
-- ✅ Implementar FCN, SegNet e U-Net em PyTorch
+- ✅ Implementar FCN, SegNet, U-Net e modelos com segmentation-models-pytorch em PyTorch
 - ✅ Comparar arquiteturas em termos de eficiência e precisão
 - ✅ Aplicar segmentação semântica a dados de sensoriamento remoto
 - ✅ Avaliar modelos com métricas como IoU e Dice Score
@@ -80,6 +89,11 @@ O próximo módulo será dedicado à construção de dataset, onde você aplicar
 <p>A U-Net é conhecida por sua precisão em contornos e sua capacidade de segmentar objetos pequenos, graças às conexões de salto que combinam características de diferentes níveis.</p>
 </details>
 
+<details>
+<summary><strong>Quais as vantagens da biblioteca segmentation-models-pytorch?</strong></summary>
+<p>A biblioteca segmentation-models-pytorch simplifica a implementação de arquiteturas complexas como U-Net, oferecendo suporte a encoders pré-treinados e funções de perda otimizadas para segmentação.</p>
+</details>
+
 ## Navegação
 
-**Anterior:** [Módulo 7: Arquiteturas de Segmentação Semântica](../modulo7/) 
+**Anterior:** [Módulo 6: Arquiteturas de Segmentação Semântica](../modulo6/) 
