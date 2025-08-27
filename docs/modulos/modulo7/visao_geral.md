@@ -76,12 +76,12 @@ O próximo módulo será dedicado à construção de dataset, onde você aplicar
 
 <details>
 <summary><strong>Qual a principal inovação da FCN?</strong></summary>
-<p>A FCN introduziu o conceito de predições densas e skip connections, permitindo a segmentação semântica de ponta a ponta.</p>
+<p>A FCN introduziu o conceito de predições densas por meio do uso de unpooling e convolução transposta, permitindo a segmentação semântica de ponta a ponta.</p>
 </details>
 
 <details>
 <summary><strong>O que torna a SegNet eficiente?</strong></summary>
-<p>A SegNet utiliza max-unpooling com índices de pooling armazenados, reduzindo o número de parâmetros e melhorando a eficiência de memória.</p>
+<p>A SegNet utiliza max-unpooling com índices de pooling armazenados, reduzindo o número de parâmetros e melhorando a eficiência de memória. O armazenamento de índices é o que difere a SegNet da FCN.</p>
 </details>
 
 <details>
