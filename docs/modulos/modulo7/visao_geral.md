@@ -16,7 +16,7 @@ Este módulo explora arquiteturas avançadas para segmentação semântica, incl
 **Tópicos Principais:**
 - **Introdução à Segmentação Semântica:** Diferenças entre classificação e segmentação
 - **Arquitetura FCN:** Encoder-decoder e convoluções transpostas
-- **Inovações:** Skip architecture por meio de somas
+- **Inovações:** Upscaling por meio de combinação de convoluções transpostas (deconvolução) e operações de unpooling
 - **Implementação Prática:** FCN com PyTorch para segmentação de imagens
 
 ---
