@@ -88,14 +88,14 @@ Este dia é dedicado ao estudo e implementação de arquiteturas avançadas de R
 #### Dia 3: Segmentação Semântica
 **Duração:** 8h
 
-- **Manhã:** FCN, SegNet, U-Net e Dataset ISPRS Potsdam (4h)
-- **Tarde:** PyTorch Lightning (4h)
+- **Manhã:** Conceitos e implementação da FCN, SegNet, U-Net e do Training Loop de Segmentação Semântica (4h)
+- **Tarde:** Treinamento de U-Net usando o Dataset ISPRS Potsdam (4h)
 
 #### Dia 4: Preparação de Dados Profissional
 **Duração:** 8h
 
-- **Manhã:** Ferramentas Geoespaciais - QGIS, Rasterio, GeoPandas, Processamento em Paralelo (ProcessPool e ThreadPool) (4h)
-- **Tarde:** Criação de Dataset Custom com dados DSG, Balanceamento e Treinamento (4h)
+- **Manhã:** PyTorch Lightning (4h)
+- **Tarde:** Ferramentas Geoespaciais - QGIS, Rasterio, GeoPandas, Processamento em Paralelo (ProcessPool e ThreadPool). Criação de Dataset Custom com dados DSG, Balanceamento e Treinamento (4h)
 
 #### Dia 5: Estado da Arte e Projeto Final
 **Duração:** 8h

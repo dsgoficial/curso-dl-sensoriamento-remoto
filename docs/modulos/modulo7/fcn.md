@@ -5,6 +5,8 @@ description: "Introdução à segmentação semântica com FCN e implementação
 tags: [fcn, segmentação, deep-learning, pytorch, convolução-transposta]
 ---
 
+**Implementação da FCN no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1FHFrGMriJHefp-CwtpFvvgWvClvks1pk?usp=sharing)
+
 # Fully Convolutional Networks (FCNs) para Segmentação Semântica em PyTorch
 
 ## Introdução à Segmentação Semântica: Do Clássico ao Convolucional
