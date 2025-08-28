@@ -96,9 +96,9 @@ A Tabela 3 resume essas estratégias de fusão.
 
 | Estratégia | Descrição | Prós e Contras | Cenário de Aplicação Recomendado |
 |------------|-----------|----------------|----------------------------------|
-| **Constant** | Todos os pixels sobrepostos recebem o mesmo peso. | **Prós**: Simples de implementar.<br>**Contras**: Propenso a artefatos de borda visuais e transições bruscas. | Tarefas onde a precisão de borda não é crítica ou o overlap é mínimo. |
-| **Gaussian** | Utiliza uma função de janela gaussiana para atribuir pesos, com os maiores pesos no centro do tile. | **Prós**: Produz transições suaves e mitiga artefatos de blending visuais.<br>**Contras**: Mais complexo computacionalmente para implementar do zero. | Tarefas onde a qualidade visual da máscara de segmentação é importante, como em imagens médicas ou de alta resolução para inspeção visual. |
-| **pytorch_toolbelt** | A biblioteca gera um tensor de peso fixo (tiler.weight) que é usado pelo CudaTileMerger para uma média ponderada. | **Prós**: Solução pronta para uso, eficiente na GPU e com resultados de alta qualidade.<br>**Contras**: Menos flexível do que abordagens que permitem a escolha do modo de blending em tempo de execução. | A maioria dos projetos de inferência de segmentação em larga escala em 2D que necessitam de um pipeline otimizado e de fácil implementação. |
+| **Constant** | Todos os pixels sobrepostos recebem o mesmo peso. | **Prós**: Simples de implementar.**Contras**: Propenso a artefatos de borda visuais e transições bruscas. | Tarefas onde a precisão de borda não é crítica ou o overlap é mínimo. |
+| **Gaussian** | Utiliza uma função de janela gaussiana para atribuir pesos, com os maiores pesos no centro do tile. | **Prós**: Produz transições suaves e mitiga artefatos de blending visuais.*Contras**: Mais complexo computacionalmente para implementar do zero. | Tarefas onde a qualidade visual da máscara de segmentação é importante, como em imagens médicas ou de alta resolução para inspeção visual. |
+| **pytorch_toolbelt** | A biblioteca gera um tensor de peso fixo (tiler.weight) que é usado pelo CudaTileMerger para uma média ponderada. | **Prós**: Solução pronta para uso, eficiente na GPU e com resultados de alta qualidade.**Contras**: Menos flexível do que abordagens que permitem a escolha do modo de blending em tempo de execução. | A maioria dos projetos de inferência de segmentação em larga escala em 2D que necessitam de um pipeline otimizado e de fácil implementação. |
 
 ## 4. Otimizações de Desempenho e Gerenciamento de Memória
 
