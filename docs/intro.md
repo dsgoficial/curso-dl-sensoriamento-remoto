@@ -95,11 +95,17 @@ Este dia é dedicado ao estudo e implementação de arquiteturas avançadas de R
 - [7.3 U-Net: Precisão em Segmentação Médica e Sensoriamento Remoto](./modulos/modulo7/unet)
 - [7.4 Segmentação Semântica Multiclasse com segmentation-models-pytorch](./modulos/modulo7/segmentation_models_pytorch)
 
-#### Dia 4: Preparação de Dados Profissional
+#### Dia 4: Preparação de Dados e Técnicas Avançadas
 **Duração:** 8h
 
-- **Manhã:** PyTorch Lightning (4h)
-- **Tarde:** Ferramentas Geoespaciais - QGIS, Rasterio, GeoPandas, Processamento em Paralelo (ProcessPool e ThreadPool). Criação de Dataset Custom com dados DSG, Balanceamento e Treinamento (4h)
+Este dia é dedicado à preparação de dados geoespaciais e à implementação de técnicas avançadas para otimização de pipelines de deep learning.
+
+- [Visão Geral do Módulo 8](./modulos/modulo8/visao_geral)
+- [8.1 Visualização de Dados no QGIS](./modulos/modulo8/visualizacao_dados_qgis)
+- [8.2 Construção de Máscaras para Segmentação Semântica](./modulos/modulo8/construcao_mascaras)
+- [8.3 Concorrência e Paralelismo no Processamento de Imagens](./modulos/modulo8/paralel_processing)
+- [8.4 Inferência com Janela Deslizante](./modulos/modulo8/sliding_window_guide)
+- [8.5 Introdução ao PyTorch Lightning](./modulos/modulo8/pytorch_lightning_course)
 
 #### Dia 5: Estado da Arte e Projeto Final
 **Duração:** 8h

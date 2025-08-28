@@ -96,6 +96,18 @@ const sidebars = {
             'modulos/modulo7/segmentation_models_pytorch',
           ],
         },
+        {
+          type: 'category',
+          label: 'Módulo 8: Preparação de Dados e Técnicas Avançadas (8h)',
+          items: [
+            'modulos/modulo8/visao_geral',
+            'modulos/modulo8/visualizacao_dados_qgis',
+            'modulos/modulo8/construcao_mascaras',
+            'modulos/modulo8/paralel_processing',
+            'modulos/modulo8/sliding_window_guide',
+            'modulos/modulo8/pytorch_lightning_course',
+          ],
+        },
       ],
     },
   ],
