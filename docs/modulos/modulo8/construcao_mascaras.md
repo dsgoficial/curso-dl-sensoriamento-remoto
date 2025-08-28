@@ -7,6 +7,10 @@ tags: [máscaras, segmentação, ground truth, geopandas, rasterio]
 
 **Construção de Máscaras no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1yAWWVOGMLgLgfWF37Cym3r5uPAl8VWmE?usp=sharing)
 
+**Treinamento com as Máscaras Construídas no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-jha7Pgbchl1_ya0Qw1M01SidRkTtyEb?usp=sharing)
+
+
+
 # Da Geometria ao Pixel: Construção de Máscaras para Deep Learning
 
 Este relatório serve como um guia abrangente para a construção de datasets de deep learning focados em segmentação semântica, utilizando dados geoespaciais. O processo abordado representa um exercício prático fundamental para qualquer curso da área, pois une os conceitos de processamento de dados vetoriais e raster em uma aplicação direta para modelos de inteligência artificial.
