@@ -105,26 +105,13 @@ Este dia é dedicado à preparação de dados geoespaciais e à implementação 
 - [8.2 Construção de Máscaras para Segmentação Semântica](./modulos/modulo8/construcao_mascaras)
 - [8.3 Concorrência e Paralelismo no Processamento de Imagens](./modulos/modulo8/paralel_processing)
 - [8.4 Inferência com Janela Deslizante](./modulos/modulo8/sliding_window_guide)
-- [8.5 Introdução ao PyTorch Lightning](./modulos/modulo8/pytorch_lightning_course)
 
-#### Dia 5: Estado da Arte e Projeto Final
+#### Dia 5: Arquiteturas Modernas e Tópicos Avançados
 **Duração:** 8h
 
+- [9.1 Introdução ao PyTorch Lightning](./modulos/modulo8/pytorch_lightning_course)
 - **Manhã:** Segmentation Models PyTorch e DeepLab v3+ (4h)
 - **Tarde:** Treinamento com dados customizados (4h)
-
-## Datasets Utilizados
-
-- **[MNIST](./recursos/datasets/mnist/)** - Aquecimento com LeNet
-- **[RESIC-45](./recursos/datasets/resic45/)** - Classificação de cenas (45 classes)
-- **[ISPRS Potsdam](./recursos/datasets/isprs-potsdam/)** - Segmentação urbana (6 classes)
-- **[Dataset DSG Custom](./recursos/datasets/dsg-custom/)** - Projeto final com dados da Diretoria de Serviço Geográfico
-
-## Recursos Disponíveis
-
-- **[Notebooks Jupyter](./exercicios/)**: Exercícios práticos interativos
-- **[Setup e Ferramentas](./recursos/setup/)**: Guias de configuração do ambiente
-- **[Bibliografia](./recursos/referencias/)**: Referências e leituras complementares
 
 ## Competências Desenvolvidas
 

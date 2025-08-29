@@ -1,9 +1,12 @@
 ---
-sidebar_position: 5
+sidebar_position: 1
 title: "Introdução ao PyTorch Lightning"
 description: "Simplificando o desenvolvimento de modelos de deep learning com PyTorch Lightning"
 tags: [pytorch, pytorch lightning, treinamento, deep learning]
 ---
+
+**Treinamento com o pytorch lightning no Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1K9xLXYDijDLHlxKTCmSJPqXDkMoi9Ck-?usp=sharing)
+
 
 # PyTorch Lightning
 

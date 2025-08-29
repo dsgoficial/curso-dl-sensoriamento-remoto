@@ -105,7 +105,15 @@ const sidebars = {
             'modulos/modulo8/construcao_mascaras',
             'modulos/modulo8/paralel_processing',
             'modulos/modulo8/sliding_window_guide',
-            'modulos/modulo8/pytorch_lightning_course',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Módulo 9: Arquiteturas Modernas de Segmentação Semântica (8h)',
+          items: [
+            'modulos/modulo9/visao_geral',
+            'modulos/modulo9/pytorch_lightning_course',
+            'modulos/modulo9/outras_arquiteturas',
           ],
         },
       ],

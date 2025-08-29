@@ -49,15 +49,6 @@ Este módulo aborda técnicas avançadas de preparação de dados e otimização
 - **Fusão de Resultados:** Estratégias para evitar artefatos de borda
 - **Implementação com pytorch_toolbelt:** Pipeline otimizado para inferência em larga escala
 
----
-
-## [8.5 Introdução ao PyTorch Lightning](./pytorch_lightning_course)
-
-**Tópicos Principais:**
-- **O que é PyTorch Lightning:** Simplificando o desenvolvimento de modelos
-- **LightningModule e Trainer:** Estrutura modular para treinamento
-- **Treinamento Distribuído:** Escalabilidade com múltiplas GPUs
-- **Boas Práticas:** Callbacks, logging e checkpointing automáticos
 
 ---
 
